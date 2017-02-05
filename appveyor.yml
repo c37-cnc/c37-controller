@@ -1,0 +1,111 @@
+# http://www.appveyor.com/docs/appveyor-yml
+
+# version format
+version: "{build}-{branch}"
+
+# branches to build
+branches:
+  # whitelist
+  only:
+    - desktop
+
+init:
+  - git --version
+  - git config --global core.autocrlf false
+  - git config --global user.name "AppVeyor"
+  - git config --global user.email "appveyor@ci.appveyor.com"
+
+environment:
+  matrix:
+  - nodejs_version: "6"
+  global:
+    GITHUB_TOKEN:
+      secure: pHSSJbIpu8XvZzBVVLN50Scjic1Wo01v8WhCn0SBOQji4zZPWrM7zssrwuQjRzwn
+    CSC_LINK:
+      secure: a+2xo1z15zej505BjOcL6iIaGEbVgJd4usmxpKZWUP4sI2tLvQdBLMOXdxr/KGzVBtMYKDHJcl3Xpv+iOUXeRjd4iplIZkkSaCUkE9mbccs=
+    CSC_KEY_PASSWORD:
+      secure: vysRX38PjZMwcrzs07Kn7w==
+
+matrix:
+  fast_finish: true
+
+cache:
+  - '%USERPROFILE%\.electron'
+
+platform:
+  - x64
+
+install:
+  - ps: |
+      Write-Host "Build directory: " -NoNewLine
+      Write-Host $env:APPVEYOR_BUILD_FOLDER -ForegroundColor "Green"
+      Write-Host "Build number: " -NoNewLine
+      Write-Host $env:APPVEYOR_BUILD_NUMBER -ForegroundColor "Green"
+      Write-Host "Branch: " -NoNewLine
+      Write-Host $env:APPVEYOR_REPO_BRANCH -ForegroundColor "Green"
+      Write-Host "Tag: " -NoNewLine
+      Write-Host $env:APPVEYOR_REPO_TAG_NAME -ForegroundColor "Green"
+      Write-Host "Commit: " -NoNewLine
+      Write-Host $env:APPVEYOR_REPO_COMMIT -ForegroundColor "Green"
+      Write-Host "Commit timestamp: " -NoNewLine
+      Write-Host $env:APPVEYOR_REPO_COMMIT_TIMESTAMP -ForegroundColor "Green"
+  - ps: Install-Product node $env:nodejs_version $env:platform
+  - npm install -g npm
+  - npm --version
+  - npm install
+
+build_script:
+  - ps: |
+      if ($env:APPVEYOR_REPO_TAG -eq 'false' -or $env:APPVEYOR_REPO_TAG -eq 'False') {
+        npm run build-latest
+      }
+      else {
+        npm run build
+      }
+  - ps: mkdir releases
+  - ps: $PACKAGE_NAME = bash -c 'dist/package-name.sh package.json'
+  - ps: $PACKAGE_VERSION = bash -c 'dist/package-version.sh package.json'
+  - ps: $env:RELEASE = "${PACKAGE_NAME}-${PACKAGE_VERSION}"
+  - ps: $env:COMMIT_LOG = git log -1 --format='%ci %H %s'
+  - ps: echo "$env:RELEASE"
+  - ps: echo "$env:COMMIT_LOG"
+  - ps: |
+      if ($env:nodejs_version -eq '6' -And $env:platform -eq 'x64') {
+        npm run build:win-x64
+        Get-ChildItem output
+        Copy-Item "output\${PACKAGE_NAME} Setup ${PACKAGE_VERSION}.exe" "releases\${env:RELEASE}-win-x64.exe"
+        Get-ChildItem releases
+        if ($env:APPVEYOR_REPO_TAG -eq 'false' -or $env:APPVEYOR_REPO_TAG -eq 'False') {
+          npm run github-release -- --owner=ciro.maciel --repo=c37-cnc/c37-controller --tag="${env:APPVEYOR_REPO_BRANCH}-latest" --name="${env:APPVEYOR_REPO_BRANCH}" --body="${env:COMMIT_LOG}" "releases\${env:RELEASE}-win-x64.exe"
+        }
+      }
+  - ps: |
+      if ($env:nodejs_version -eq '6' -And $env:platform -eq 'x64') {
+        npm run build:win-ia32
+        Get-ChildItem output
+        Copy-Item "output\${PACKAGE_NAME} Setup ${PACKAGE_VERSION}.exe" "releases\${env:RELEASE}-win-x86.exe"
+        Get-ChildItem releases
+        if ($env:APPVEYOR_REPO_TAG -eq 'false' -or $env:APPVEYOR_REPO_TAG -eq 'False') {
+          npm run github-release -- --owner=ciro.maciel --repo=c37-cnc/c37-controller --tag="${env:APPVEYOR_REPO_BRANCH}-latest" --name="${env:APPVEYOR_REPO_BRANCH}" --body="${env:COMMIT_LOG}" "releases\${env:RELEASE}-win-x86.exe"
+        }
+      }
+
+test: off
+
+# Packaging artifacts
+# https://www.appveyor.com/docs/packaging-artifacts
+artifacts:
+  # pushing all *.exe files in a directory
+  - path: releases\*.exe
+
+# Publishing artifacts to GitHub Releases
+# https://www.appveyor.com/docs/deployment/github
+deploy:
+  - provider: GitHub
+    auth_token:
+      secure: f1e84e7ed83b62ba40cb294570d9a93c9da6c5ce
+    draft: false
+    prerelease: false
+    on:
+      appveyor_repo_tag: false  # deploy on tag push only
+      nodejs_version: "6"
