@@ -75,6 +75,8 @@ build_script:
       if ($env:nodejs_version -eq '6' -And $env:platform -eq 'x64') {
         npm run build:win-ia32
         Get-ChildItem output
+        echo Get-ChildItem
+        echo "Get-ChildItem"
         Copy-Item "output\${PACKAGE_NAME} Setup ${PACKAGE_VERSION}.exe" "releases\${env:RELEASE}-win-ia32.exe"
         Get-ChildItem releases
         if ($env:APPVEYOR_REPO_TAG -eq 'false' -or $env:APPVEYOR_REPO_TAG -eq 'False') {
