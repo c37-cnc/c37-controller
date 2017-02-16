@@ -26,7 +26,7 @@
   "devDependencies": {
     "electron": "latest",
     "electron-builder": "latest",
-    "github-release-cli": "latest"
+    "github-release": "latest"
   },
   "scripts": {
     "dist-linux-64": "build -l",
