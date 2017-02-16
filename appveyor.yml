@@ -53,6 +53,7 @@ build_script:
   #       npm run build
   #     }
   - ps: mkdir releases
+  - ps: mkdir output
   - ps: $PACKAGE_NAME = bash -c 'scripts/package-name.sh package.json'
   - ps: $PACKAGE_VERSION = bash -c 'scripts/package-version.sh package.json'
   - ps: $env:RELEASE = "${PACKAGE_NAME}-${PACKAGE_VERSION}"
