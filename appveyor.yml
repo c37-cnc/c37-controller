@@ -55,9 +55,9 @@ build_script:
   #       npm run build
   #     }
   - ps: mkdir releases
-  #- ps: mkdir output
-  - ps: $PACKAGE_NAME = bash -c 'script/package-name.sh package.json'
-  - ps: $PACKAGE_VERSION = bash -c 'script/package-version.sh package.json'
+  # http://help.appveyor.com/discussions/questions/1954-getting-version-from-packagejson
+  - ps: $PACKAGE_NAME = (Get-Content -Raw -Path package.json | ConvertFrom-Json).name
+  - ps: $PACKAGE_VERSION = (Get-Content -Raw -Path package.json | ConvertFrom-Json).version
   - ps: $env:RELEASE = "${PACKAGE_NAME}-${PACKAGE_VERSION}"
   - ps: $env:COMMIT_LOG = git log -1 --format='%ci %H %s'
   - ps: echo "$env:RELEASE"
@@ -76,7 +76,7 @@ build_script:
       if ($env:nodejs_version -eq '6' -And $env:platform -eq 'x64') {
         npm run build:win-ia32
         Get-ChildItem output
-        Copy-Item "output\${PACKAGE_NAME} Setup ${PACKAGE_VERSION}.exe" "releases\${env:RELEASE}-win-ia32.exe"
+        Copy-Item "output\${PACKAGE_NAME} Setup ${PACKAGE_VERSION}.exe" "releases\${env:RELEASE}-win-x32.exe"
         Get-ChildItem releases
         # if ($env:APPVEYOR_REPO_TAG -eq 'false' -or $env:APPVEYOR_REPO_TAG -eq 'False') {
         #   npm run github-release delete --owner ciro.maciel --repo c37-cnc/c37-controller --tag "${env:APPVEYOR_REPO_BRANCH}-latest" --name "${env:APPVEYOR_REPO_BRANCH}" "*-win-ia32.exe"
