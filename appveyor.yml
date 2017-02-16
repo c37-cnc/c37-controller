@@ -93,10 +93,11 @@ artifacts:
 # Publishing artifacts to GitHub Releases
 # https://www.appveyor.com/docs/deployment/github
 deploy:
-  - provider: GitHub
+    provider: GitHub
     auth_token:
       # https://ci.appveyor.com/project/CiroCesarMaciel/c37-controller/settings/yaml
       secure: Im0pKtKzb0e5WE4/rr5vd6/F1DF/x7amSXOocq6u7SnsM0QvjsHtrURZA+lz81J8
+    artifact: releases\*.exe 
     draft: false
     prerelease: false
     on:
