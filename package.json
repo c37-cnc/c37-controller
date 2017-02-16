@@ -24,7 +24,7 @@
     "serialport": "latest"
   },
   "devDependencies": {
-    "electron-prebuilt": "latest",
+    "electron": "latest",
     "electron-builder": "latest"
   },
   "scripts": {
