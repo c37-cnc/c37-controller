@@ -54,8 +54,8 @@ build_script:
   #     }
   - ps: mkdir releases
   #- ps: mkdir output
-  - ps: $PACKAGE_NAME = bash -c 'scripts/package-name.sh package.json'
-  - ps: $PACKAGE_VERSION = bash -c 'scripts/package-version.sh package.json'
+  - ps: $PACKAGE_NAME = bash -c 'script/package-name.sh package.json'
+  - ps: $PACKAGE_VERSION = bash -c 'script/package-version.sh package.json'
   - ps: $env:RELEASE = "${PACKAGE_NAME}-${PACKAGE_VERSION}"
   - ps: $env:COMMIT_LOG = git log -1 --format='%ci %H %s'
   - ps: echo "$env:RELEASE"

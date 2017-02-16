@@ -36,7 +36,7 @@
   },
   "build": {
     "appId": "c37.controller",
-    "productName": "C37 - Controller",
+    "productName": "c37-controller-desktop",
     "asar": false,
     "compression": "maximum",
     "directories": {
