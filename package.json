@@ -30,8 +30,8 @@
   "scripts": {
     "dist-linux-64": "build -l",
     "dist-linux-32": "build -l --ia32",
-    "dist-windows-64": "build --win",
-    "dist-windows-32": "build --win --ia32"
+    "build:win-x64": "build --win",
+    "build:win-ia32": "build --win --ia32"
   },
   "build": {
     "appId": "c37.controller",
