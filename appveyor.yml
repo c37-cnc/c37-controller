@@ -95,8 +95,8 @@ artifacts:
 deploy:
   - provider: GitHub
     auth_token:
-      # SHA-256
-      secure: 3d864379b7c1c644d55f2862fbe14f282ec149918f53c9ffb9488854f4094e41
+      # https://ci.appveyor.com/project/CiroCesarMaciel/c37-controller/settings/yaml
+      secure: Im0pKtKzb0e5WE4/rr5vd6/F1DF/x7amSXOocq6u7SnsM0QvjsHtrURZA+lz81J8
     draft: false
     prerelease: false
     on:
