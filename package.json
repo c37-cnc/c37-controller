@@ -39,6 +39,10 @@
     "productName": "C37 - Controller",
     "asar": false,
     "compression": "maximum",
+    "directories": {
+      "buildResources": "build",
+      "output": "output"
+    },    
     "linux": {
       "category": "Development",
       "target": ["deb", "rpm"],
