@@ -93,7 +93,7 @@ artifacts:
 
 # Publishing artifacts to GitHub Releases
 # https://www.appveyor.com/docs/deployment/github
-deploy:
+deploy: 
     # description: 'C37 - Controller - Release'
     provider: GitHub
     auth_token:
