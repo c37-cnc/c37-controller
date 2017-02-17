@@ -83,7 +83,7 @@ build_script:
         # }
       }
 
-test: off  
+test: off
 
 # Packaging artifacts
 # https://www.appveyor.com/docs/packaging-artifacts
