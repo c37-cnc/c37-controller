@@ -94,6 +94,7 @@ artifacts:
 # Publishing artifacts to GitHub Releases
 # https://www.appveyor.com/docs/deployment/github
 deploy:
+    description: 'C37 - Controller - Release'
     provider: GitHub
     auth_token:
       # https://ci.appveyor.com/project/CiroCesarMaciel/c37-controller/settings/yaml
@@ -101,6 +102,7 @@ deploy:
     artifact: releases\*.exe 
     draft: false
     prerelease: false
+    force_update: true
     on:
       branch: master
       appveyor_repo_tag: false  # deploy on tag push only 
