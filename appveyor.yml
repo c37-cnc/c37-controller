@@ -26,6 +26,10 @@ matrix:
 platform:
   - x64
 
+# https://github.com/appveyor/ci/issues/882
+# Do not build feature branch with open Pull Requests
+skip_branch_with_pr: true
+
 install:
   - ps: |
       Write-Host "Build directory: " -NoNewLine
