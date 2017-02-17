@@ -16,8 +16,7 @@ environment:
   - nodejs_version: "6"
   # https://github.com/electron-userland/electron-builder/wiki/Code-Signing
   global:
-    GITHUB_TOKEN:
-      secure: Im0pKtKzb0e5WE4/rr5vd6/F1DF/x7amSXOocq6u7SnsM0QvjsHtrURZA+lz81J8
+    GITHUB_TOKEN: Im0pKtKzb0e5WE4/rr5vd6/F1DF/x7amSXOocq6u7SnsM0QvjsHtrURZA+lz81J8
       
 matrix:
   fast_finish: true
@@ -67,10 +66,10 @@ build_script:
         npm run build:win-x64
         Copy-Item "output\${PACKAGE_NAME} Setup ${PACKAGE_VERSION}.exe" "releases\${env:RELEASE}-win-x64.exe"
         Get-ChildItem releases
-        # if ($env:APPVEYOR_REPO_TAG -eq 'false' -or $env:APPVEYOR_REPO_TAG -eq 'False') {
-        #   npm run github-release delete --owner ciro.maciel --repo c37-cnc/c37-controller --tag "${env:APPVEYOR_REPO_BRANCH}-latest" --name "${env:APPVEYOR_REPO_BRANCH}" "*-win-x64.exe"
-        #   npm run github-release upload --owner ciro.maciel --repo c37-cnc/c37-controller --tag "${env:APPVEYOR_REPO_BRANCH}-latest" --name "${env:APPVEYOR_REPO_BRANCH}" --body "${env:COMMIT_LOG}" "releases\${env:RELEASE}-win-x64.exe"
-        # }
+        if ($env:APPVEYOR_REPO_TAG -eq 'false' -or $env:APPVEYOR_REPO_TAG -eq 'False') {
+          npm run github-release delete --owner ciro.maciel --repo c37-cnc/c37-controller --tag "${env:APPVEYOR_REPO_BRANCH}-latest" --name "${env:APPVEYOR_REPO_BRANCH}" "*-win-x64.exe"
+          npm run github-release upload --owner ciro.maciel --repo c37-cnc/c37-controller --tag "${env:APPVEYOR_REPO_BRANCH}-latest" --name "${env:APPVEYOR_REPO_BRANCH}" --body "${env:COMMIT_LOG}" "releases\${env:RELEASE}-win-x64.exe"
+        }
       }
   - ps: |
       if ($env:nodejs_version -eq '6' -And $env:platform -eq 'x64') {
@@ -79,8 +78,8 @@ build_script:
         Copy-Item "output\${PACKAGE_NAME} Setup ${PACKAGE_VERSION}.exe" "releases\${env:RELEASE}-win-x32.exe"
         Get-ChildItem releases
         # if ($env:APPVEYOR_REPO_TAG -eq 'false' -or $env:APPVEYOR_REPO_TAG -eq 'False') {
-        #   npm run github-release delete --owner ciro.maciel --repo c37-cnc/c37-controller --tag "${env:APPVEYOR_REPO_BRANCH}-latest" --name "${env:APPVEYOR_REPO_BRANCH}" "*-win-ia32.exe"
-        #   npm run github-release upload --owner ciro.maciel --repo c37-cnc/c37-controller --tag "${env:APPVEYOR_REPO_BRANCH}-latest" --name "${env:APPVEYOR_REPO_BRANCH}" --body "${env:COMMIT_LOG}" "releases\${env:RELEASE}-win-ia32.exe"
+        #   npm run github-release delete --owner ciro.maciel --repo c37-cnc/c37-controller --tag "${env:APPVEYOR_REPO_BRANCH}-latest" --name "${env:APPVEYOR_REPO_BRANCH}" "*-win-x32.exe"
+        #   npm run github-release upload --owner ciro.maciel --repo c37-cnc/c37-controller --tag "${env:APPVEYOR_REPO_BRANCH}-latest" --name "${env:APPVEYOR_REPO_BRANCH}" --body "${env:COMMIT_LOG}" "releases\${env:RELEASE}-win-x32.exe"
         # }
       }
 
