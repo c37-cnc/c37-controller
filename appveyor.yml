@@ -15,8 +15,8 @@ environment:
   matrix:
   - nodejs_version: "6"
   # https://github.com/electron-userland/electron-builder/wiki/Code-Signing
-  global:
-    GITHUB_TOKEN: Im0pKtKzb0e5WE4/rr5vd6/F1DF/x7amSXOocq6u7SnsM0QvjsHtrURZA+lz81J8
+  # global:
+  #   GITHUB_TOKEN: Im0pKtKzb0e5WE4/rr5vd6/F1DF/x7amSXOocq6u7SnsM0QvjsHtrURZA+lz81J8
       
 matrix:
   fast_finish: true
