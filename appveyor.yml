@@ -99,7 +99,6 @@ deploy:
     auth_token:
       # https://ci.appveyor.com/project/CiroCesarMaciel/c37-controller/settings/yaml
       secure: Im0pKtKzb0e5WE4/rr5vd6/F1DF/x7amSXOocq6u7SnsM0QvjsHtrURZA+lz81J8
-    artifact: "releases\${env:RELEASE}-win-x64.exe", "releases\${env:RELEASE}-win-x32.exe"
     draft: false
     prerelease: false
     force_update: true
