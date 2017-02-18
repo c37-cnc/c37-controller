@@ -75,15 +75,15 @@ script:
 
 after_success:
   - mkdir -p releases
-  - PACKAGE_NAME=`scripts/package-name.sh src/package.json`
-  - PACKAGE_VERSION=`scripts/package-version.sh src/package.json`
+  - PACKAGE_NAME=`script/package-name.sh src/package.json`
+  - PACKAGE_VERSION=`script/package-version.sh src/package.json`
   - RELEASE=${PACKAGE_NAME}-${PACKAGE_VERSION}
   - COMMIT_LOG=`git log -1 --format='%ci %H %s'`
   - |
     # build:mac-x64
     if [[ "$TRAVIS_NODE_VERSION" == "6" && "$TRAVIS_OS_NAME" == "osx" ]]; then
       # https://github.com/electron-userland/electron-builder/issues/398
-      security import "scripts/certs/Certum-Code-Signing-CA-SHA2.cer" -k ~/Library/Keychains/login.keychain -T /usr/bin/codesign;
+      # security import "scripts/certs/Certum-Code-Signing-CA-SHA2.cer" -k ~/Library/Keychains/login.keychain -T /usr/bin/codesign;
       # https://github.com/electron-userland/electron-osx-sign/issues/83
       # Temporarily Bypass Gatekeeper
       sudo spctl --master-disable;
@@ -183,5 +183,5 @@ deploy:
   skip_cleanup: true
   on:
     # https://docs.travis-ci.com/user/deployment#Conditional-Releases-with-on
-    tags: true  # Deploy app only when a tag is applied to the commit
+    tags: false  # Deploy app only when a tag is applied to the commit
     node: '6'
