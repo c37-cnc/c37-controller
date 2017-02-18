@@ -92,21 +92,21 @@ after_success:
       ls -al output output/*;
       cp -af "output/mac/${RELEASE}.dmg" "releases/${RELEASE}-mac-x64.dmg";
       ls -al releases/*;
-      if [[ -z "$TRAVIS_TAG" ]]; then
-        npm run github-release -- delete \
-          --owner=cncjs \
-          --repo=cncjs \
-          --tag="${TRAVIS_BRANCH}-latest" \
-          --name="${TRAVIS_BRANCH}" \
-          "*-mac-x64.dmg";
-        npm run github-release -- upload \
-          --owner=cncjs \
-          --repo=cncjs \
-          --tag="${TRAVIS_BRANCH}-latest" \
-          --name="${TRAVIS_BRANCH}" \
-          --body="${COMMIT_LOG}" \
-          "releases/${RELEASE}-mac-x64.dmg";
-      fi
+      # if [[ -z "$TRAVIS_TAG" ]]; then
+      #   npm run github-release -- delete \
+      #     --owner=cncjs \
+      #     --repo=cncjs \
+      #     --tag="${TRAVIS_BRANCH}-latest" \
+      #     --name="${TRAVIS_BRANCH}" \
+      #     "*-mac-x64.dmg";
+      #   npm run github-release -- upload \
+      #     --owner=cncjs \
+      #     --repo=cncjs \
+      #     --tag="${TRAVIS_BRANCH}-latest" \
+      #     --name="${TRAVIS_BRANCH}" \
+      #     --body="${COMMIT_LOG}" \
+      #     "releases/${RELEASE}-mac-x64.dmg";
+      # fi
     fi
   - |
     # build:linux-ia32
@@ -120,21 +120,21 @@ after_success:
       rm -f "${RELEASE}-linux-ia32";
       popd;
       ls -al releases/*;
-      if [[ -z "$TRAVIS_TAG" ]]; then
-        npm run github-release -- delete \
-          --owner=cncjs \
-          --repo=cncjs \
-          --tag="${TRAVIS_BRANCH}-latest" \
-          --name="${TRAVIS_BRANCH}" \
-          "*-linux-i386.deb" "*-linux-ia32.tar.gz";
-        npm run github-release -- upload \
-          --owner=cncjs \
-          --repo=cncjs \
-          --tag="${TRAVIS_BRANCH}-latest" \
-          --name="${TRAVIS_BRANCH}" \
-          --body="${COMMIT_LOG}" \
-          "releases/${RELEASE}-linux-i386.deb" "releases/${RELEASE}-linux-ia32.tar.gz";
-      fi
+      # if [[ -z "$TRAVIS_TAG" ]]; then
+      #   npm run github-release -- delete \
+      #     --owner=cncjs \
+      #     --repo=cncjs \
+      #     --tag="${TRAVIS_BRANCH}-latest" \
+      #     --name="${TRAVIS_BRANCH}" \
+      #     "*-linux-i386.deb" "*-linux-ia32.tar.gz";
+      #   npm run github-release -- upload \
+      #     --owner=cncjs \
+      #     --repo=cncjs \
+      #     --tag="${TRAVIS_BRANCH}-latest" \
+      #     --name="${TRAVIS_BRANCH}" \
+      #     --body="${COMMIT_LOG}" \
+      #     "releases/${RELEASE}-linux-i386.deb" "releases/${RELEASE}-linux-ia32.tar.gz";
+      # fi
     fi
   - |
     # build:linux-x64
@@ -148,21 +148,21 @@ after_success:
       rm -f "${RELEASE}-linux-x64";
       popd;
       ls -al releases/*;
-      if [[ -z "$TRAVIS_TAG" ]]; then
-        npm run github-release -- delete \
-          --owner=cncjs \
-          --repo=cncjs \
-          --tag="${TRAVIS_BRANCH}-latest" \
-          --name="${TRAVIS_BRANCH}" \
-          "*-linux-amd64.deb" "*-linux-x64.tar.gz";
-        npm run github-release -- upload \
-          --owner=cncjs \
-          --repo=cncjs \
-          --tag="${TRAVIS_BRANCH}-latest" \
-          --name="${TRAVIS_BRANCH}" \
-          --body="${COMMIT_LOG}" \
-          "releases/${RELEASE}-linux-amd64.deb" "releases/${RELEASE}-linux-x64.tar.gz";
-      fi
+      # if [[ -z "$TRAVIS_TAG" ]]; then
+      #   npm run github-release -- delete \
+      #     --owner=cncjs \
+      #     --repo=cncjs \
+      #     --tag="${TRAVIS_BRANCH}-latest" \
+      #     --name="${TRAVIS_BRANCH}" \
+      #     "*-linux-amd64.deb" "*-linux-x64.tar.gz";
+      #   npm run github-release -- upload \
+      #     --owner=cncjs \
+      #     --repo=cncjs \
+      #     --tag="${TRAVIS_BRANCH}-latest" \
+      #     --name="${TRAVIS_BRANCH}" \
+      #     --body="${COMMIT_LOG}" \
+      #     "releases/${RELEASE}-linux-amd64.deb" "releases/${RELEASE}-linux-x64.tar.gz";
+      # fi
     fi
   - |
     # docker image
@@ -175,7 +175,8 @@ before_deploy:
 deploy:
   provider: releases
   api_key:
-    secure: "oFmp9ufvaj47S+TEwZreEuCLHcPkgxu4lc5G8IKeVoasMY6pkUTKmmfloH9X5Kt3bJEmH3Bmc7/qsjaBSY5r4yuK8L2BagSKxbPiPP6Hr7i8siFqZvg2Z99ciO3gy7FC1LEWsVqySoO2IhemI0J/v6w4oBYiD1RnsncTtr9a5aPW0ffjqdzV0/Qnzr9wMSy6S80z/6vLUZm4KVFXBbEo1185vqU/fFggWJJFA46Hb8+shQO7qcFQuHVtd1qAUrnaoibYaYPqOVdjIwn04jG+BEbT8Dy8IDlNy77LzgqmQtDpf/Ajkegha6WRusVB5icJM7aUl4xLZICCNuG8DLm9LZRdc7zHvnKY55M3qGLGtv6tdkHgQsdj6oCzsn7pPZRhKyRYUZjbzxJJIQ0dVLmv1bLK/5IbOWk5TCt3fHw0kJtWNWPh1GjForW9JUioTVZZbac22tVZnRP32o/pnnACIjpqPLOC3Ubc/2BmmZ/WgV4K4SHJFNTCpn797vMT6YygWdhOrfueBHp2XuJWwpCmc3GGfgZiq3F0g4IpBBnY6Kuddmy1mGJdCLU6X5vlrDZfJQGQvdhP9avMI3prZHwCcqlavgLTr5Ntgg50QdMIFKTddGRrVPb11UjurYPLohZThS4WrHUx99F85GVJxqew/QyJgKJKiW1h8e//JTE0B7o="
+    #https://docs.travis-ci.com/user/encrypting-files/
+    secure:
   file_glob: true
   file:
     - 'releases/*.*'
