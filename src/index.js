@@ -19,7 +19,7 @@ app.on('ready', function () {
     win = new BrowserWindow({
         // width: 1700,
         width: 1000,
-        height: 611,
+        height: 575,
         // height: 1000,
         frame: false,
         toolbar: false,
