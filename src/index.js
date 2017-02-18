@@ -60,7 +60,7 @@ app.on('ready', function () {
     })
 
     // Open the DevTools. Ctrl + Shift + I
-    win.webContents.openDevTools();
+    // win.webContents.openDevTools();
 
     // Emitted when the window is closed.
     win.on('closed', function () {
