@@ -179,7 +179,7 @@ deploy:
   provider: releases
   api_key:
     #https://docs.travis-ci.com/user/encrypting-files/
-    secure: 44603ec8928228b783ea1d9bec4723bbee608cf6
+    secure: ca0b2970ef0794af424c9e951af27152e0af3aba
   file_glob: true
   file:
     - 'releases/*.*'
