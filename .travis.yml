@@ -172,6 +172,9 @@ after_success:
 
 before_deploy:
   - echo "Deploying to GitHub releases"
+branches:
+  only:
+    - master   
 deploy:
   provider: releases
   api_key:
