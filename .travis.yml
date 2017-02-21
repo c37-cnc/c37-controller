@@ -172,14 +172,17 @@ after_success:
 
 before_deploy:
   - echo "Deploying to GitHub releases"
+# https://github.com/travis-ci/travis-ci/issues/2498
 branches:
   only:
     - master   
 deploy:
   provider: releases
   api_key:
-    #https://docs.travis-ci.com/user/encrypting-files/
-    secure: ca0b2970ef0794af424c9e951af27152e0af3aba
+    # https://docs.travis-ci.com/user/encrypting-files/
+    # https://github.com/travis-ci/travis-ci/issues/4154
+    # Editing the travis slug in .git/config, as described in #3093, restored my ability to encrypt files.
+    secure: "u5PzdHaVGsj3gc2bxpJLcmpHlj63dOvOaqgCAGLuz6ePTXVT35mGVNA3KizmkTF+x6LThTzVjqCHotv9l7nFxWSH8a5MW3eSE8UeqRmzoD2dKk/IdphqbphSNAZJXC8t6nSmMn0oK/KFbkxYthiZvKzkUEGREgl8A1B67cXCwLQiS0Ytrc6P7DkWXVgomP/A3uwWI9xoLzIHrOc9ForpSI2A0UUK4sv1OmjehBD0JQDsrcsYOnw5Pd/X4T520l1obzJTBzOmKJTR5+pQQyuCqddBelV007pOzFE3tthrXG5PCLobe351W2oDqtcpq5ByXsCLOwxv9ztpXonrAPwt76JoStdqg+VPAFi7piGrI+SVtwppIZ+U3uAhYgu5sFg3uBjyx2OhVav8KeE6v4MnLLRkPxZLhdJPusL/lxIDwVKC+ic4GFC8bpl9hsPDM8DGdOIMpTWn2Z2BWeB6yM96QejbjcDkhGk9ID81XtxJTBY3bBq2brMiaVHUIyxdeCYqFx20EDUjmvFFa0yOz2IL6t2eXrxJB5nJOcbfvcaZuvnO9Ok1ipEgkLPeKxFaqyKtVJ13D107MytI68bAXCmmnbS3XXsR9p7iLcy8R8ZyQaNrolh9OzkkYWcyyvSiFpmH3SvkQf8Az2DzPpvadMauQ1Rct45S7pKVOFmLwcW3MKE="
   file_glob: true
   file:
     - 'releases/*.*'
