@@ -48,7 +48,7 @@
     },
     "linux": {
       "category": "Development",
-      "target": ["deb", "rpm"],
+      "target": ["deb"],
       "synopsis": "Ao conectar a C37 - Router CNC em seu computador através do cabo USB, você poderá acessar o software C37 - Controlador para operar sua máquina-ferramenta e dar inicio ao processo de fabricação.",
       "vendor": "C37 - CNC"
     },
