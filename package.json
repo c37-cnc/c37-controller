@@ -29,10 +29,10 @@
     "github-release": "latest"
   },
   "scripts": {
-    "build:mac-x64": "build --mac --x64'",
+    "build:mac-x64": "build --mac --x64",
 
-    "build:linux-ia32": "build --linux --ia32'",
-    "build:linux-x64": "build --linux --x64'",
+    "build:linux-ia32": "build --linux --ia32",
+    "build:linux-x64": "build --linux --x64",
 
     "build:win-x64": "build --win",
     "build:win-ia32": "build --win --ia32"
