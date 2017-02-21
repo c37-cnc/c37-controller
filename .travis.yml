@@ -63,7 +63,7 @@ before_install:
   - npm install -g npm
   - npm --version
 
-install: travis_wait 40 npm install
+#install: travis_wait 40 npm install
 
 # script:
 #   - |
@@ -176,7 +176,7 @@ deploy:
   provider: releases
   api_key:
     #https://docs.travis-ci.com/user/encrypting-files/
-    secure: 
+    secure: 44603ec8928228b783ea1d9bec4723bbee608cf6
   file_glob: true
   file:
     - 'releases/*.*'
