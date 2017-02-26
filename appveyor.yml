@@ -30,6 +30,10 @@ platform:
 # Do not build feature branch with open Pull Requests
 skip_branch_with_pr: true
 
+# https://www.appveyor.com/docs/appveyor-yml/
+# Start builds on tags only (GitHub and BitBucket)
+skip_non_tags: true
+
 install:
   - ps: |
       Write-Host "Build directory: " -NoNewLine
