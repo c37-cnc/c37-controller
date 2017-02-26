@@ -7,7 +7,8 @@ var electron = require('electron'),
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 //let win
-var win;
+var win,
+    winState = null;
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
@@ -17,10 +18,10 @@ app.on('ready', function () {
     // Create the browser window.
     // https://github.com/electron/electron/blob/master/docs-translations/pt-BR/api/browser-window.md
     win = new BrowserWindow({
-        // width: 1700,
-        width: 1020,
-        height: 575,
-        // height: 1000,
+        width: 1700,
+        // width: 1020,
+        // height: 575,
+        height: 1000,
         frame: false,
         toolbar: false,
         transparent: true,
@@ -43,24 +44,59 @@ app.on('ready', function () {
         );
     });
 
+
+    // https://github.com/electron/electron/blob/master/docs-translations/pt-BR/api/browser-window.md
     ipcMain.on('window-state', function (_, state) {
 
         if (state === "close") {
             win.close();
         } else if (state === "minimize") {
             win.minimize();
+            winState = "minimize";
         } else {
-            if (win.isMaximized()) {
+            if (win.isMaximized() || winState === "maximize") {
                 win.restore();
+
+                // 2017.02.26 - remendo para posicionamento e restore de janela em windows
+                if (process.platform === "win32") {
+                    if (position.length === 3) {
+                        win.setBounds(position[0]);
+                    } else {
+                        win.setBounds(position[position.length - 3]);
+                    }
+                    position = [];
+                    position.push(win.getBounds());
+                }
+                // 2017.02.26 - remendo para posicionamento e restore de janela em windows
+
+
+                winState = "restore";
             } else {
                 win.maximize();
+                winState = "maximize";
             }
         }
 
+        // console.log(winState);
+
     })
 
+
+    if (process.platform === "win32") {
+
+        var position = [];
+
+        position.push(win.getBounds());
+
+        win.on('move', function () {
+            position.push(win.getBounds());
+        });
+
+    }
+
+
     // Open the DevTools. Ctrl + Shift + I
-    // win.webContents.openDevTools();
+    win.webContents.openDevTools();
 
     // Emitted when the window is closed.
     win.on('closed', function () {
