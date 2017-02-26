@@ -59,9 +59,9 @@ build_script:
   #     }
   - ps: mkdir releases
   # http://help.appveyor.com/discussions/questions/1954-getting-version-from-packagejson
-  - ps: $PACKAGE_NAME = (Get-Content -Raw -Path package.json | ConvertFrom-Json).name
-  - ps: $PACKAGE_VERSION = (Get-Content -Raw -Path package.json | ConvertFrom-Json).version
-  - ps: $env:RELEASE = "${PACKAGE_NAME}-${PACKAGE_VERSION}"
+  - ps: $PACKAGE_NAME = bash -c 'script/package-name.sh src/package.json'
+  - ps: $PACKAGE_VERSION = bash -c 'script/package-version.sh src/package.json'
+  - ps: $env:RELEASE = "${PACKAGE_NAME}-v${PACKAGE_VERSION}"
   - ps: $env:COMMIT_LOG = git log -1 --format='%ci %H %s'
   - ps: echo "$env:RELEASE"
   - ps: echo "$env:COMMIT_LOG"
