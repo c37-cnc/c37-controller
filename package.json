@@ -1,6 +1,6 @@
 {
   "name": "c37-controller-desktop",
-  "version": "0.0.67",
+  "version": "0.0.68",
   "description": "C37 - Controlador - Desktop",
   "homepage": "https://controller.c37.co/",
   "license": "CC BY-NC-ND 4.0",
@@ -31,8 +31,8 @@
     "build:mac-x64": "build --mac --x64",
     "build:linux-ia32": "build --linux --ia32",
     "build:linux-x64": "build --linux --x64",
-    "build:win-x64": "build --win --project",
-    "build:win-ia32": "build --win --ia32 --project"
+    "build:win-x64": "build --win --project '.'",
+    "build:win-ia32": "build --win --ia32 --project '.'"
   },
   "build": {
     "appId": "c37.controller",
