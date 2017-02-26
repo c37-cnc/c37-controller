@@ -2,8 +2,8 @@
 
 version: "{build}-{branch}"
 
-cache:
-  - '%USERPROFILE%\.electron'
+# cache:
+#   - '%USERPROFILE%\.electron'
 
 init:
   - git --version
@@ -29,6 +29,10 @@ platform:
 # https://github.com/appveyor/ci/issues/882
 # Do not build feature branch with open Pull Requests
 skip_branch_with_pr: true
+
+# https://www.appveyor.com/docs/appveyor-yml/
+# Start builds on tags only (GitHub and BitBucket)
+skip_non_tags: true
 
 install:
   - ps: |
@@ -59,9 +63,9 @@ build_script:
   #     }
   - ps: mkdir releases
   # http://help.appveyor.com/discussions/questions/1954-getting-version-from-packagejson
-  - ps: $PACKAGE_NAME = (Get-Content -Raw -Path package.json | ConvertFrom-Json).name
-  - ps: $PACKAGE_VERSION = (Get-Content -Raw -Path package.json | ConvertFrom-Json).version
-  - ps: $env:RELEASE = "${PACKAGE_NAME}-${PACKAGE_VERSION}"
+  - ps: $PACKAGE_NAME = bash -c 'script/package-name.sh package.json'
+  - ps: $PACKAGE_VERSION = bash -c 'script/package-version.sh package.json'
+  - ps: $env:RELEASE = "${PACKAGE_NAME}-v${PACKAGE_VERSION}"
   - ps: $env:COMMIT_LOG = git log -1 --format='%ci %H %s'
   - ps: echo "$env:RELEASE"
   - ps: echo "$env:COMMIT_LOG"
@@ -78,7 +82,6 @@ build_script:
   - ps: |
       if ($env:nodejs_version -eq '6' -And $env:platform -eq 'x64') {
         npm run build:win-ia32
-        Get-ChildItem output
         Copy-Item "output\${PACKAGE_NAME} Setup ${PACKAGE_VERSION}.exe" "releases\${env:RELEASE}-win-x32.exe"
         # Get-ChildItem releases
         # if ($env:APPVEYOR_REPO_TAG -eq 'false' -or $env:APPVEYOR_REPO_TAG -eq 'False') {
