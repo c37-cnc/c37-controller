@@ -1,7 +1,9 @@
 {
   "name": "c37-controller-desktop",
-  "version": "0.0.63",
+  "version": "0.0.64",
   "description": "C37 - Controlador - Desktop",
+  "homepage": "https://controller.c37.co/",
+  "license": "CC BY-NC-ND 4.0",
   "keywords": [
     "C37 - Controlador - Desktop",
     "C37",
@@ -18,6 +20,9 @@
     "name": "Andréa Fabiana Maciel",
     "email": "andrea.maciel@c37.co"
   }],
+  "directories": {
+    "src": "./src"
+  },  
   "dependencies": {
     "serialport": "latest"
   },
