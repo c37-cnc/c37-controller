@@ -1,6 +1,6 @@
 {
   "name": "c37-controller-desktop",
-  "version": "0.0.56",
+  "version": "0.0.57",
   "description": "C37 - Controlador - Desktop",
   "keywords": [
     "C37 - Controlador",
@@ -27,10 +27,8 @@
   },
   "scripts": {
     "build:mac-x64": "build --mac --x64",
-
     "build:linux-ia32": "build --linux --ia32",
     "build:linux-x64": "build --linux --x64",
-
     "build:win-x64": "build --win",
     "build:win-ia32": "build --win --ia32"
   },
