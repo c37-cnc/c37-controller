@@ -71,7 +71,8 @@ build_script:
   - ps: echo "$env:COMMIT_LOG"
   - ps: |
       if ($env:nodejs_version -eq '6' -And $env:platform -eq 'x64') {
-        npm run build:win-x64
+        # npm run build:win-x64
+        build --win
         Copy-Item "output\${PACKAGE_NAME} Setup ${PACKAGE_VERSION}.exe" "releases\${env:RELEASE}-win-x64.exe"
         # Get-ChildItem releases
         # if ($env:APPVEYOR_REPO_TAG -eq 'false' -or $env:APPVEYOR_REPO_TAG -eq 'False') {
