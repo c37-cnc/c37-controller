@@ -1,14 +1,11 @@
 {
   "name": "c37-controller-desktop",
-  "version": "0.0.60",
+  "version": "0.0.61",
   "description": "C37 - Controlador - Desktop",
-  "homepage": "https://controller.c37.co/",
-  "license": "CC BY-NC-ND 4.0",
   "keywords": [
-    "C37 - Controlador - Desktop",
+    "C37 - Controlador",
     "C37",
-    "Controlador",
-    "Desktop"
+    "Controlador"
   ],
   "private": true,
   "main": "./src/index.js",
@@ -20,17 +17,20 @@
     "name": "Andréa Fabiana Maciel",
     "email": "andrea.maciel@c37.co"
   }],
+  "directories": {
+    "src": "./src"
+  },
   "dependencies": {
     "serialport": "latest"
   },
   "devDependencies": {
     "electron": "latest",
-    "electron-builder": "latest"
+    "electron-builder": "latest",
+    "github-release": "latest"
   },
   "scripts": {
-    "build:mac-x64": "build --mac --x64",
-    "build:linux-ia32": "build --linux --ia32",
-    "build:linux-x64": "build --linux --x64",
+    "dist-linux-64": "build -l",
+    "dist-linux-32": "build -l --ia32",
     "build:win-x64": "build --win",
     "build:win-ia32": "build --win --ia32"
   },
@@ -42,10 +42,10 @@
     "directories": {
       "buildResources": "build",
       "output": "output"
-    },    
+    },
     "linux": {
       "category": "Development",
-      "target": ["deb"],
+      "target": ["deb", "rpm"],
       "synopsis": "Ao conectar a C37 - Router CNC em seu computador através do cabo USB, você poderá acessar o software C37 - Controlador para operar sua máquina-ferramenta e dar inicio ao processo de fabricação.",
       "vendor": "C37 - CNC"
     },
