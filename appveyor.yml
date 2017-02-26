@@ -2,8 +2,8 @@
 
 version: "{build}-{branch}"
 
-cache:
-  - '%USERPROFILE%\.electron'
+# cache:
+#   - '%USERPROFILE%\.electron'
 
 init:
   - git --version
