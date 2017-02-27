@@ -35,16 +35,18 @@ addons:
       - g++-multilib
 
 before_install:
-  - chmod a+x script
   - chmod a+x script/package-name.sh
   - chmod a+x script/package-version.sh
+
   - git --version
   - git config --global user.name "Travis CI"
   - git config --global user.email "travis@travis-ci.org"
+
   # https://github.com/electron-userland/electron-builder/wiki/Multi-Platform-Build#os-x
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
       brew update;
     fi
+
   - npm install -g npm
   - npm --version
 
@@ -56,15 +58,10 @@ after_success:
   - PACKAGE_NAME=`script/package-name.sh package.json`
   - PACKAGE_VERSION=`script/package-version.sh package.json`
   - RELEASE=${PACKAGE_NAME}-v${PACKAGE_VERSION}
-  - COMMIT_LOG="git log -1 --format='%ci %H %s'";
+  - COMMIT_LOG="git log -1 --format='%ci %H %s'"
 
-
-  - TESTE6=dasdasdsdsadas
-  - export TESTE8=dasdasdsdsadas
-
-  - echo "${TESTE6}";
-  - echo "${TESTE8}";
-
+  - echo "${RELEASE}"
+  - echo "${COMMIT_LOG}"
 
   - |
     # build:mac-x64
