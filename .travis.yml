@@ -70,6 +70,7 @@ after_success:
   - env: $TESTE3 = "SASASA"
   - $TESTE4 = sudo `script/package-version.sh package.json`
   - TESTE5 =  `sudo script/package-version.sh package.json`
+  - TESTE6 =  dasdasdsdsadas
 
   - echo "${RELEASE}";
   - echo "${TESTE}";
@@ -77,6 +78,7 @@ after_success:
   - echo "${TESTE3}";
   - echo "${TESTE4}";
   - echo "${TESTE5}";
+  - echo "${TESTE6}";
   - echo "sasasas";
 
   - |
