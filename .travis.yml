@@ -1,10 +1,13 @@
 # https://github.com/cncjs/cncjs/blob/master/.travis.yml
 # https://github.com/resin-io/etcher/blob/master/.travis.yml
 # https://github.com/develar/onshape-desktop-shell/blob/master/.travis.yml
+
+# https://docs.travis-ci.com/user/languages/javascript-with-nodejs/
 # https://docs.travis-ci.com/user/environment-variables/
 
 osx_image: xcode8
 
+# permissoes 
 sudo: required
 dist: trusty
 group: edge
@@ -128,5 +131,5 @@ deploy:
   skip_cleanup: true
   on:
     # https://docs.travis-ci.com/user/deployment
-    tags: true  # Deploy app only when a tag is applied to the commit
+    tags: false  # Deploy app only when a tag is applied to the commit
     node: '6'
