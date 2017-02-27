@@ -61,24 +61,17 @@ after_success:
   
   - PACKAGE_NAME = `script/package-name.sh package.json`
   - PACKAGE_VERSION = `script/package-version.sh package.json`
-  - RELEASE = "${PACKAGE_NAME}-v${PACKAGE_VERSION}";
+  - RELEASE = ${PACKAGE_NAME}-v${PACKAGE_VERSION}
   - COMMIT_LOG = "git log -1 --format='%ci %H %s'";
 
 
-  - env: TESTE = "SASASA"
-  - $TESTE2 = bash `script/package-version.sh package.json`
-  - env: $TESTE3 = "SASASA"
-  - $TESTE4 = sudo `script/package-version.sh package.json`
-  - TESTE5 =  `sudo script/package-version.sh package.json`
-  - TESTE6 =  dasdasdsdsadas
+  - TESTE6=dasdasdsdsadas
+  - export TESTE7 = dasdasdsdsadas
+  - export TESTE8=dasdasdsdsadas
 
-  - echo "${RELEASE}";
-  - echo "${TESTE}";
-  - echo "${TESTE2}";
-  - echo "${TESTE3}";
-  - echo "${TESTE4}";
-  - echo "${TESTE5}";
   - echo "${TESTE6}";
+  - echo "${TESTE7}";
+  - echo "${TESTE8}";
   - echo "sasasas";
 
   - |
