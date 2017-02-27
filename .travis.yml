@@ -65,12 +65,14 @@ after_success:
   - COMMIT_LOG = "git log -1 --format='%ci %H %s'";
 
 
-  - TESTE = "SASASA"
-  - TESTE2 = bash -c 'script/package-version.sh package.json'
+  - env: TESTE = "SASASA"
+  - $TESTE2 = bash -c 'script/package-version.sh package.json'
+  - env: $TESTE3 = "SASASA"
 
   - echo "${RELEASE}";
   - echo "${TESTE}";
   - echo "${TESTE2}";
+  - echo "${TESTE3}";
   - echo "sasasas";
 
   - |
