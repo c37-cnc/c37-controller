@@ -7,6 +7,7 @@ osx_image: xcode8
 
 sudo: required
 dist: trusty
+group: edge
 
 language: node_js
 
@@ -34,7 +35,9 @@ addons:
       - g++-multilib
 
 before_install:
-  - chmod +x script
+  - chmod a+x script
+  - chmod a+x script/package-name.sh
+  - chmod a+x script/package-version.sh
   - git --version
   - git config --global user.name "Travis CI"
   - git config --global user.email "travis@travis-ci.org"
