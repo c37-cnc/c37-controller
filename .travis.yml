@@ -6,6 +6,8 @@
 # https://docs.travis-ci.com/user/languages/javascript-with-nodejs/
 # https://docs.travis-ci.com/user/environment-variables/
 
+
+# https://docs.travis-ci.com/user/osx-ci-environment
 osx_image: xcode8.1
 
 # permissoes 
@@ -93,7 +95,7 @@ after_success:
       npm run build:mac-x64;
 
       ls -al output;
-      cp -af "output/mac/${RELEASE}.dmg" "releases/${RELEASE}-mac-x64.dmg";
+      mv -f "output/mac/${RELEASE}.dmg" "releases/${RELEASE}-mac-x64.dmg";
 
       ls -al releases/*;
     fi
@@ -104,7 +106,8 @@ after_success:
       npm run build:linux-ia32;
     
       ls -al output;
-      cp -af "output/${PACKAGE_NAME}_${PACKAGE_VERSION}_i386.deb" "releases/${RELEASE}-linux-i386.deb";
+      # http://www.rapidtables.com/code/linux/mv.htm
+      mv -f "output/${PACKAGE_NAME}_${PACKAGE_VERSION}_i386.deb" "releases/${RELEASE}-linux-i386.deb";
       rm -rf "output/linux-ia32-unpacked";
 
       ls -al releases;
@@ -117,7 +120,7 @@ after_success:
       npm run build:linux-x64;
     
       ls -al output;
-      cp -af "output/${PACKAGE_NAME}_${PACKAGE_VERSION}_amd64.deb" "releases/${RELEASE}-linux-amd64.deb";
+      mv -f "output/${PACKAGE_NAME}_${PACKAGE_VERSION}_amd64.deb" "releases/${RELEASE}-linux-amd64.deb";
       rm -rf "output/linux-unpacked";
 
       ls -al releases;
