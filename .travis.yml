@@ -1,0 +1,178 @@
+# https://github.com/cncjs/cncjs/blob/master/.travis.yml
+# https://github.com/resin-io/etcher/blob/master/.travis.yml
+# https://github.com/develar/onshape-desktop-shell/blob/master/.travis.yml
+# https://docs.travis-ci.com/user/environment-variables/
+
+osx_image: xcode8
+
+sudo: required
+dist: trusty
+
+language: node_js
+
+os:
+  - linux
+  - osx
+
+node_js:
+  - '6'
+
+env:
+  global:
+    secure: "eryx7/5CJL5nrB2L1RXQ0XZwmeF5HQJWtp9r5BdoWTHv5FCWFizgRVrb5BhCKrEMHQuDX84iO8ICMKtxUrqGOrghbxSUS+LHyLU3wM48hKx+EWX1fNiKnFq95+QmjTVFJWxokkaN01SW0WcCDILWcZrbO5x5+FdrlYXXHdh5S/40twaFeeVnND2TiJqsEdGj+fRMCmqxZy3CheDTqwIslJ0OMt6QQqefvdAUibhPP193iIljD7+h/TF/zYER1fYi6GST/lAdgNzvQuuXWJAlzBsOstO0v7q6BvPXz7faLL97DrxPjMyriPdUVVyqCOI95+IKHs065k+BHz1VgcYkl+oHwlvjZzn9epEAv2pMld2IR3+MO13A1Z7w8PJQGS38vtHjl2OO5XhK9Pkco+ZFWFkBNvzPMfsYdP3z7o/2/Fo061bfYvNs0ZAvNXFXkcXFT3kWtq4NRV8UtvsxzeUk+RNdmbIPtOwgUydoFUUobKhix2cHo0jvJZy0bZ2DyZNU1rdBFDplkjcdFHeJQirgWZCGZSYHK3S7gNjCDWueLfRRdPxMayHNlRkSAXjdFrF5aTQQw94p569rDveEemHUCuk5J3Krt2NNX/SrEkzUQx8iYHxCgoVRDUGC7U3Amn3QMzl0lQITIzCCxKGaGHqkiSpu65BHMPudvT0CYzou9Qw=" #"GH_TOKEN"
+
+cache:
+  directories:
+    - $HOME/.electron
+
+addons:
+  apt:
+    packages:
+      - icnsutils
+      - graphicsmagick
+      - gcc-multilib
+      - g++-multilib
+
+before_install:
+  - git --version
+  - git config --global user.name "Travis CI"
+  - git config --global user.email "travis@travis-ci.org"
+  #
+  # https://github.com/electron-userland/electron-builder/wiki/Multi-Platform-Build#os-x
+  #
+  # Use brew to install required packages.
+  #
+  # To build app in distributable format for Windows on OS X:
+  # $ brew install Caskroom/cask/xquartz wine mono
+  #
+  # To build app in distributable format for Linux on OS X:
+  # $ brew install ruby gnu-tar libicns graphicsmagick
+  #
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+      brew update;
+    fi
+  - npm install -g npm
+  - npm --version
+
+#install: travis_wait 40 npm install
+
+after_success:
+  - mkdir -p releases
+  - PACKAGE_NAME=`script/package-name.sh src/package.json`
+  - PACKAGE_VERSION=`script/package-version.sh src/package.json`
+  - RELEASE= "${PACKAGE_NAME}-v${PACKAGE_VERSION}"
+  - COMMIT_LOG=`git log -1 --format='%ci %H %s'`
+  - echo ${RELEASE}
+  - |
+    # build:mac-x64
+    if [[ "$TRAVIS_NODE_VERSION" == "6" && "$TRAVIS_OS_NAME" == "osx" ]]; then
+      # https://github.com/electron-userland/electron-builder/issues/398
+      # security import "scripts/certs/Certum-Code-Signing-CA-SHA2.cer" -k ~/Library/Keychains/login.keychain -T /usr/bin/codesign;
+      # https://github.com/electron-userland/electron-osx-sign/issues/83
+      # Temporarily Bypass Gatekeeper
+      sudo spctl --master-disable;
+      sudo spctl --status;
+      npm run build:mac-x64;
+      ls -al output output/*;
+      cp -af "output/mac/${RELEASE}.dmg" "releases/${RELEASE}-mac-x64.dmg";
+      ls -al releases/*;
+      # if [[ -z "$TRAVIS_TAG" ]]; then
+      #   npm run github-release -- delete \
+      #     --owner=cncjs \
+      #     --repo=cncjs \
+      #     --tag="${TRAVIS_BRANCH}-latest" \
+      #     --name="${TRAVIS_BRANCH}" \
+      #     "*-mac-x64.dmg";
+      #   npm run github-release -- upload \
+      #     --owner=cncjs \
+      #     --repo=cncjs \
+      #     --tag="${TRAVIS_BRANCH}-latest" \
+      #     --name="${TRAVIS_BRANCH}" \
+      #     --body="${COMMIT_LOG}" \
+      #     "releases/${RELEASE}-mac-x64.dmg";
+      # fi
+    fi
+  - |
+    # build:linux-ia32
+    if [[ "$TRAVIS_NODE_VERSION" == "6" && "$TRAVIS_OS_NAME" == "linux" ]]; then
+      npm run build:linux-ia32;
+      ls -al output;
+      cp -af "output/${PACKAGE_NAME}_${PACKAGE_VERSION}_i386.deb" "releases/${RELEASE}-linux-i386.deb";
+      rm -f linux-ia32-unpacked;
+      
+      #pushd releases;
+      # ln -sf ../output/linux-ia32-unpacked "${RELEASE}-linux-ia32";
+      # tar zcfh "${RELEASE}-linux-ia32.tar.gz" "${RELEASE}-linux-ia32";
+      # rm -f "${RELEASE}-linux-ia32";
+      # popd;
+      # ls -al releases/*;
+      # if [[ -z "$TRAVIS_TAG" ]]; then
+      #   npm run github-release -- delete \
+      #     --owner=cncjs \
+      #     --repo=cncjs \
+      #     --tag="${TRAVIS_BRANCH}-latest" \
+      #     --name="${TRAVIS_BRANCH}" \
+      #     "*-linux-i386.deb" "*-linux-ia32.tar.gz";
+      #   npm run github-release -- upload \
+      #     --owner=cncjs \
+      #     --repo=cncjs \
+      #     --tag="${TRAVIS_BRANCH}-latest" \
+      #     --name="${TRAVIS_BRANCH}" \
+      #     --body="${COMMIT_LOG}" \
+      #     "releases/${RELEASE}-linux-i386.deb" "releases/${RELEASE}-linux-ia32.tar.gz";
+      # fi
+    fi
+  - |
+    # build:linux-x64
+    if [[ "$TRAVIS_NODE_VERSION" == "6" && "$TRAVIS_OS_NAME" == "linux" ]]; then
+      npm run build:linux-x64;
+      ls -al output;
+      cp -af "output/${PACKAGE_NAME}_${PACKAGE_VERSION}_amd64.deb" "releases/${RELEASE}-linux-amd64.deb";
+      rm -f linux-unpacked;
+
+
+      # pushd releases;
+      # ln -sf ../output/linux-unpacked "${RELEASE}-linux-x64";
+      # tar zcfh "${RELEASE}-linux-x64.tar.gz" "${RELEASE}-linux-x64";
+      # rm -f "${RELEASE}-linux-x64";
+      # popd;
+      # ls -al releases/*;
+      # if [[ -z "$TRAVIS_TAG" ]]; then
+      #   npm run github-release -- delete \
+      #     --owner=cncjs \
+      #     --repo=cncjs \
+      #     --tag="${TRAVIS_BRANCH}-latest" \
+      #     --name="${TRAVIS_BRANCH}" \
+      #     "*-linux-amd64.deb" "*-linux-x64.tar.gz";
+      #   npm run github-release -- upload \
+      #     --owner=cncjs \
+      #     --repo=cncjs \
+      #     --tag="${TRAVIS_BRANCH}-latest" \
+      #     --name="${TRAVIS_BRANCH}" \
+      #     --body="${COMMIT_LOG}" \
+      #     "releases/${RELEASE}-linux-amd64.deb" "releases/${RELEASE}-linux-x64.tar.gz";
+      # fi
+    fi
+ 
+before_deploy:
+  - echo "Deploying to GitHub releases"
+# https://github.com/travis-ci/travis-ci/issues/2498
+branches:
+  only:
+    - master   
+deploy:
+  provider: releases
+  api_key:
+    # https://docs.travis-ci.com/user/encrypting-files/
+    # https://github.com/travis-ci/travis-ci/issues/4154
+    # Editing the travis slug in .git/config, as described in #3093, restored my ability to encrypt files.
+    secure: "w+erVeQJ8g1jqVBl84CxS4jc+GuYyGWfjlTM3pN+Ma/Z/Ie8MeNhc9SmtcDbbzg+fmjMM2H5OF7kHvDGCnLkHNYLp8CLw8hl04X8HzB2K9ZoxQvchHh+acgZOY1Trif+12qhiVJEkL0oCtBJewwZ77QaBjhZnHsdu24rK3pyUYYbkt6zfudu/HPNUskDR8paoaK7g+5AF8VS6qSXawA50V4ljLyFj2WPWfTfvqMgNTLl60uALyW/K3iFBMu3UgNTX3kUUgn3nt1NIY4XW6lmaTJqKzxLa7giUy/Oj0AHUlG3a/MnfxVVyjjM0RV3ywAVDqQEEIQkh+Z/aGNVQG5W7RVeXTv0ncncy8vzNMKBKbUX2noT25tV66HT/t+qnPQEVYbnfW+q1jr92XpfOZGrU1mhN02ZmMAR/424zJLBY3k9HKDdvu+GRyxmIfvn7YvaAVz27Xh1kULlYCWhdQxYZVD/X3NqhpHZjnJHuNeUHmKtX3dF0Jekx1KGQEEcyJ28gukg780Lrqf0RFSMDRfmbQB7SF96ZBwizowYNtQJ4NYP2lPL9vxi4q76bDkkRqUPgJyYPXz468TvpUxSlYji0Bwp7a25za5W8piudBwZJAOj0woUtZGwkD9BH2uyqOg9pz+Q6C8tjid1pNlAj1sywwOaiXmwDEkkaYrnyWGgpbY="
+  file_glob: true
+  file:
+    - 'releases/*.*'
+  overwrite: true
+  skip_cleanup: true
+  on:
+    # https://docs.travis-ci.com/user/deployment
+    tags: true  # Deploy app only when a tag is applied to the commit
+    node: '6'
