@@ -59,7 +59,8 @@ before_install:
 after_success:
   - mkdir -p releases
 
-  - PACKAGE_NAME = 'scripts/package-name.sh package.json'
+  # - PACKAGE_NAME = 'scripts/package-name.sh package.json'
+  - PACKAGE_NAME = 'sasasasas'
   - PACKAGE_VERSION = 'scripts/package-version.sh package.json'
   - RELEASE = "${PACKAGE_NAME}-v${PACKAGE_VERSION}"
   - COMMIT_LOG = "git log -1 --format='%ci %H %s'"
@@ -102,7 +103,7 @@ after_success:
       npm run build:linux-ia32;
     
       ls -al output;
-      cp -af "output/'scripts/package-name.sh package.json'_${PACKAGE_VERSION}_i386.deb" "releases/${RELEASE}-linux-i386.deb";
+      cp -af "output/${PACKAGE_NAME}_${PACKAGE_VERSION}_i386.deb" "releases/${RELEASE}-linux-i386.deb";
       rm -rf "output/linux-ia32-unpacked";
 
       ls -al releases;
