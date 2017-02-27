@@ -13,8 +13,6 @@ osx_image: xcode8.1
 # permissoes 
 sudo: required
 dist: trusty
-# https://docs.travis-ci.com/user/build-environment-updates/2016-12-01/
-# group: edge
 
 language: node_js
 
@@ -34,6 +32,7 @@ env:
 # https://docs.travis-ci.com/user/customizing-the-build/
 # https://github.com/travis-ci/travis-ci/issues/1532
 # https://github.com/travis-ci/travis-ci/issues/2498
+# Deploy app only when a tag is applied to the commit
 branches:
   only:
   - /^v[0-9]/ # apenas os branches com tags!
