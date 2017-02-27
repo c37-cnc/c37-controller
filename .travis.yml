@@ -24,7 +24,8 @@ node_js:
 # https://docs.travis-ci.com/user/environment-variables/
 env:
   global:
-    - TIMEOUT=1000
+    # para o erro em macOS - Error: GitHub Personal Access Token is not set, neither programmatically, nor using env "GH_TOKEN"
+    secure: "eryx7/5CJL5nrB2L1RXQ0XZwmeF5HQJWtp9r5BdoWTHv5FCWFizgRVrb5BhCKrEMHQuDX84iO8ICMKtxUrqGOrghbxSUS+LHyLU3wM48hKx+EWX1fNiKnFq95+QmjTVFJWxokkaN01SW0WcCDILWcZrbO5x5+FdrlYXXHdh5S/40twaFeeVnND2TiJqsEdGj+fRMCmqxZy3CheDTqwIslJ0OMt6QQqefvdAUibhPP193iIljD7+h/TF/zYER1fYi6GST/lAdgNzvQuuXWJAlzBsOstO0v7q6BvPXz7faLL97DrxPjMyriPdUVVyqCOI95+IKHs065k+BHz1VgcYkl+oHwlvjZzn9epEAv2pMld2IR3+MO13A1Z7w8PJQGS38vtHjl2OO5XhK9Pkco+ZFWFkBNvzPMfsYdP3z7o/2/Fo061bfYvNs0ZAvNXFXkcXFT3kWtq4NRV8UtvsxzeUk+RNdmbIPtOwgUydoFUUobKhix2cHo0jvJZy0bZ2DyZNU1rdBFDplkjcdFHeJQirgWZCGZSYHK3S7gNjCDWueLfRRdPxMayHNlRkSAXjdFrF5aTQQw94p569rDveEemHUCuk5J3Krt2NNX/SrEkzUQx8iYHxCgoVRDUGC7U3Amn3QMzl0lQITIzCCxKGaGHqkiSpu65BHMPudvT0CYzou9Qw=" #"GH_TOKEN"
 
 # https://docs.travis-ci.com/user/customizing-the-build/
 # https://github.com/travis-ci/travis-ci/issues/1532
