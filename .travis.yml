@@ -59,10 +59,10 @@ before_install:
 after_success:
   - mkdir -p releases
 
-  - PACKAGE_NAME = 'scripts/package-name.sh package.json';
-  - PACKAGE_VERSION = 'scripts/package-version.sh package.json';
-  - RELEASE = "${PACKAGE_NAME}-v${PACKAGE_VERSION}";
-  - COMMIT_LOG = "git log -1 --format='%ci %H %s'";
+  - env:PACKAGE_NAME = 'scripts/package-name.sh package.json';
+  - env:PACKAGE_VERSION = 'scripts/package-version.sh package.json';
+  - env:RELEASE = "${PACKAGE_NAME}-v${PACKAGE_VERSION}";
+  - env:COMMIT_LOG = "git log -1 --format='%ci %H %s'";
   
   - echo "${RELEASE}";
 
