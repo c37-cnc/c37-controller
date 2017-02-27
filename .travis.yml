@@ -23,7 +23,13 @@ node_js:
 
 env:
 
-
+# https://docs.travis-ci.com/user/customizing-the-build/
+# https://github.com/travis-ci/travis-ci/issues/1532
+branches:
+  only:
+  - master
+  - /^v[0-9]/
+  
 cache:
   directories:
     - $HOME/.electron
