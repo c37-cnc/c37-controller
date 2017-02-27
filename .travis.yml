@@ -15,7 +15,7 @@ group: edge
 language: node_js
 
 os:
-  - linux
+  # - linux
   - osx
 
 node_js:
@@ -28,7 +28,7 @@ env:
 branches:
   only:
   - master
-  - /^v[0-9]/
+  - /^v[0-9]/ # apenas com tags!
   
 cache:
   directories:
@@ -64,6 +64,7 @@ before_install:
 after_success:
   - mkdir -p releases
   
+  # http://stackoverflow.com/questions/28217556/travis-ci-auto-tag-build-for-github-release
   # deixar desta forma, nao colocar espacos, erro!
   - PACKAGE_NAME=`script/package-name.sh package.json`
   - PACKAGE_VERSION=`script/package-version.sh package.json`
