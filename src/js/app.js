@@ -1,9 +1,9 @@
 /**
  *
- * C37 - Controller - Desktop in Sun Feb 26 2017 14:50:14 GMT-0300 (BRT)
+ * C37 - Controller - Desktop in Mon Feb 27 2017 13:30:00 GMT-0300 (BRT)
  *
  * c37-controller-desktop - C37 - Controlador - Desktop
- * @version 0.0.42
+ * @version 0.0.106
  * @link https://controller.c37.co/
  * @license CC BY-NC-ND 4.0
  *
