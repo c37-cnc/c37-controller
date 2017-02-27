@@ -3,7 +3,7 @@
   <thead>
     <tr>
       <th>Linux</th>
-      <th>OS X</th>
+      <th>macOS</th>
       <th>Windows</th>
     </tr>
   </thead>
