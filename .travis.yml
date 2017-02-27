@@ -99,28 +99,9 @@ after_success:
       ls -al output;
       cp -af "output/${PACKAGE_NAME}_${PACKAGE_VERSION}_i386.deb" "releases/${RELEASE}-linux-i386.deb";
       rm -f linux-ia32-unpacked;
-      
-      #pushd releases;
-      # ln -sf ../output/linux-ia32-unpacked "${RELEASE}-linux-ia32";
-      # tar zcfh "${RELEASE}-linux-ia32.tar.gz" "${RELEASE}-linux-ia32";
-      # rm -f "${RELEASE}-linux-ia32";
-      # popd;
-      # ls -al releases/*;
-      # if [[ -z "$TRAVIS_TAG" ]]; then
-      #   npm run github-release -- delete \
-      #     --owner=cncjs \
-      #     --repo=cncjs \
-      #     --tag="${TRAVIS_BRANCH}-latest" \
-      #     --name="${TRAVIS_BRANCH}" \
-      #     "*-linux-i386.deb" "*-linux-ia32.tar.gz";
-      #   npm run github-release -- upload \
-      #     --owner=cncjs \
-      #     --repo=cncjs \
-      #     --tag="${TRAVIS_BRANCH}-latest" \
-      #     --name="${TRAVIS_BRANCH}" \
-      #     --body="${COMMIT_LOG}" \
-      #     "releases/${RELEASE}-linux-i386.deb" "releases/${RELEASE}-linux-ia32.tar.gz";
-      # fi
+
+      ls -al releases;
+
     fi
   - |
     # build:linux-x64
@@ -130,28 +111,8 @@ after_success:
       cp -af "output/${PACKAGE_NAME}_${PACKAGE_VERSION}_amd64.deb" "releases/${RELEASE}-linux-amd64.deb";
       rm -f linux-unpacked;
 
+      ls -al releases;
 
-      # pushd releases;
-      # ln -sf ../output/linux-unpacked "${RELEASE}-linux-x64";
-      # tar zcfh "${RELEASE}-linux-x64.tar.gz" "${RELEASE}-linux-x64";
-      # rm -f "${RELEASE}-linux-x64";
-      # popd;
-      # ls -al releases/*;
-      # if [[ -z "$TRAVIS_TAG" ]]; then
-      #   npm run github-release -- delete \
-      #     --owner=cncjs \
-      #     --repo=cncjs \
-      #     --tag="${TRAVIS_BRANCH}-latest" \
-      #     --name="${TRAVIS_BRANCH}" \
-      #     "*-linux-amd64.deb" "*-linux-x64.tar.gz";
-      #   npm run github-release -- upload \
-      #     --owner=cncjs \
-      #     --repo=cncjs \
-      #     --tag="${TRAVIS_BRANCH}-latest" \
-      #     --name="${TRAVIS_BRANCH}" \
-      #     --body="${COMMIT_LOG}" \
-      #     "releases/${RELEASE}-linux-amd64.deb" "releases/${RELEASE}-linux-x64.tar.gz";
-      # fi
     fi
  
 before_deploy:
