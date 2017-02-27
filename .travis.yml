@@ -36,7 +36,6 @@ env:
 # https://github.com/travis-ci/travis-ci/issues/2498
 branches:
   only:
-  - master
   - /^v[0-9]/ # apenas com tags!
   
 cache:
