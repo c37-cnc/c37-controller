@@ -59,20 +59,18 @@ before_install:
 after_success:
   - mkdir -p releases
   
-  - PACKAGE_NAME = `script/package-name.sh package.json`
-  - PACKAGE_VERSION = `script/package-version.sh package.json`
-  - RELEASE = ${PACKAGE_NAME}-v${PACKAGE_VERSION}
-  - COMMIT_LOG = "git log -1 --format='%ci %H %s'";
+  - PACKAGE_NAME=`script/package-name.sh package.json`
+  - PACKAGE_VERSION=`script/package-version.sh package.json`
+  - RELEASE=${PACKAGE_NAME}-v${PACKAGE_VERSION}
+  - COMMIT_LOG="git log -1 --format='%ci %H %s'";
 
 
   - TESTE6=dasdasdsdsadas
-  - export TESTE7 = dasdasdsdsadas
   - export TESTE8=dasdasdsdsadas
 
   - echo "${TESTE6}";
-  - echo "${TESTE7}";
   - echo "${TESTE8}";
-  - echo "sasasas";
+
 
   - |
     # build:mac-x64
