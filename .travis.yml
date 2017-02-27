@@ -59,10 +59,10 @@ before_install:
 after_success:
   - mkdir -p releases
 
-  - PACKAGE_NAME=`script/package-name.sh package.json`
-  - PACKAGE_VERSION=`script/package-version.sh package.json`
-  - RELEASE= `${PACKAGE_NAME}-v${PACKAGE_VERSION}`
-  - COMMIT_LOG=`git log -1 --format='%ci %H %s'`
+  - $PACKAGE_NAME=`script/package-name.sh package.json`
+  - $PACKAGE_VERSION=`script/package-version.sh package.json`
+  - $RELEASE= "${PACKAGE_NAME}-v${PACKAGE_VERSION}"
+  - $COMMIT_LOG=`git log -1 --format='%ci %H %s'`
   
   - echo "${RELEASE}"
 
@@ -115,8 +115,7 @@ after_success:
       npm run build:linux-x64;
     
       ls -al output;
-      # cp -af "output/${PACKAGE_NAME}_${PACKAGE_VERSION}_amd64.deb" "releases/${RELEASE}-linux-amd64.deb";
-      cp -af "output/${PACKAGE_NAME}_${PACKAGE_VERSION}_amd64.deb" "releases/ddfsfdsfsfd.deb";
+      cp -af "output/${PACKAGE_NAME}_${PACKAGE_VERSION}_amd64.deb" "releases/${RELEASE}-linux-amd64.deb";
       rm -rf "output/linux-unpacked";
 
       ls -al releases;
