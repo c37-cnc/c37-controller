@@ -115,7 +115,8 @@ after_success:
       npm run build:linux-x64;
     
       ls -al output;
-      cp -af "output/${PACKAGE_NAME}_${PACKAGE_VERSION}_amd64.deb" "releases/${RELEASE}-linux-amd64.deb";
+      # cp -af "output/${PACKAGE_NAME}_${PACKAGE_VERSION}_amd64.deb" "releases/${RELEASE}-linux-amd64.deb";
+      cp -af "output/${PACKAGE_NAME}_${PACKAGE_VERSION}_amd64.deb" "releases/ddfsfdsfsfd.deb";
       rm -rf "output/linux-unpacked";
 
       ls -al releases;
