@@ -22,8 +22,7 @@ node_js:
   - '6'
 
 env:
-  # global:
-  #   - secure: "eryx7/5CJL5nrB2L1RXQ0XZwmeF5HQJWtp9r5BdoWTHv5FCWFizgRVrb5BhCKrEMHQuDX84iO8ICMKtxUrqGOrghbxSUS+LHyLU3wM48hKx+EWX1fNiKnFq95+QmjTVFJWxokkaN01SW0WcCDILWcZrbO5x5+FdrlYXXHdh5S/40twaFeeVnND2TiJqsEdGj+fRMCmqxZy3CheDTqwIslJ0OMt6QQqefvdAUibhPP193iIljD7+h/TF/zYER1fYi6GST/lAdgNzvQuuXWJAlzBsOstO0v7q6BvPXz7faLL97DrxPjMyriPdUVVyqCOI95+IKHs065k+BHz1VgcYkl+oHwlvjZzn9epEAv2pMld2IR3+MO13A1Z7w8PJQGS38vtHjl2OO5XhK9Pkco+ZFWFkBNvzPMfsYdP3z7o/2/Fo061bfYvNs0ZAvNXFXkcXFT3kWtq4NRV8UtvsxzeUk+RNdmbIPtOwgUydoFUUobKhix2cHo0jvJZy0bZ2DyZNU1rdBFDplkjcdFHeJQirgWZCGZSYHK3S7gNjCDWueLfRRdPxMayHNlRkSAXjdFrF5aTQQw94p569rDveEemHUCuk5J3Krt2NNX/SrEkzUQx8iYHxCgoVRDUGC7U3Amn3QMzl0lQITIzCCxKGaGHqkiSpu65BHMPudvT0CYzou9Qw=" #"GH_TOKEN"
+
 
 cache:
   directories:
@@ -38,6 +37,7 @@ addons:
       - g++-multilib
 
 before_install:
+  # http://stackoverflow.com/questions/33820638/travis-yml-gradlew-permission-denied
   - chmod a+x script/package-name.sh
   - chmod a+x script/package-version.sh
 
@@ -62,10 +62,10 @@ after_success:
   - PACKAGE_NAME=`script/package-name.sh package.json`
   - PACKAGE_VERSION=`script/package-version.sh package.json`
   - RELEASE=${PACKAGE_NAME}-v${PACKAGE_VERSION}
-  - COMMIT_LOG=`git log -1 --format='%ci %H %s'`
+  # - COMMIT_LOG=`git log -1 --format='%ci %H %s'`
 
   - echo "${RELEASE}"
-  - echo "${COMMIT_LOG}"
+  # - echo "${COMMIT_LOG}"
 
   - |
     # build:mac-x64
@@ -131,5 +131,10 @@ deploy:
   skip_cleanup: true
   on:
     # https://docs.travis-ci.com/user/deployment
+    # https://github.com/travis-ci/travis-ci/issues/6499
     tags: false  # Deploy app only when a tag is applied to the commit
     node: '6'
+
+# https://docs.travis-ci.com/user/notifications    
+notifications:
+    email: false    
