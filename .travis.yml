@@ -93,8 +93,8 @@ after_success:
 
       npm run build:mac-x64;
 
-      ls -al output;
-      mv -f "output/mac/${RELEASE}.dmg" "releases/${RELEASE}-mac-x64.dmg";
+      ls -al output output/*;
+      mv -f "output/mac/${PACKAGE_NAME}_${PACKAGE_VERSION}.dmg" "releases/${RELEASE}-mac-x64.dmg";
 
       ls -al releases/*
 
