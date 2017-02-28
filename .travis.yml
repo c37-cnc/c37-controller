@@ -109,6 +109,7 @@ after_success:
       ls -al output;
       # http://www.rapidtables.com/code/linux/mv.htm
       mv -f "output/${PACKAGE_NAME}_${PACKAGE_VERSION}_i386.deb" "releases/${RELEASE}-linux-i386.deb";
+      rm -rf "output/${PACKAGE_NAME}_${PACKAGE_VERSION}_i386.deb";
 
       ls -al releases;
 
@@ -120,7 +121,9 @@ after_success:
       npm run build:linux-x64;
     
       ls -al output;
+      # http://www.rapidtables.com/code/linux/mv.htm
       mv -f "output/${PACKAGE_NAME}_${PACKAGE_VERSION}_amd64.deb" "releases/${RELEASE}-linux-amd64.deb";
+      rm -rf "output/${PACKAGE_NAME}_${PACKAGE_VERSION}_amd64.deb"
 
       ls -al releases;
 
