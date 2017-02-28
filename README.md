@@ -27,8 +27,8 @@
   </tbody>
 </table>
 
-<small style="float: right">
-  <a target="_blank" href="https://shields.io/" style="float: right;font-size: 8px">
+<small style="float: right; font-size: 8px">
+  <a target="_blank" href="https://shields.io/" style="float: right;">
     shields.io
   </a>
 </small>
