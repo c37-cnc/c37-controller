@@ -28,11 +28,12 @@
 </table>
 
 
-<sub>
+<div style="float: right">
   <sup>
     <a target="_blank" href="https://shields.io/">
       shields.io
     </a>
   </sup>
-</sub>
+</div>
+
 
