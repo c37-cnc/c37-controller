@@ -144,13 +144,12 @@ deploy:
     - "releases/${RELEASE}-linux-i386.deb"
     - "releases/${RELEASE}-linux-amd64.deb"
     - "releases/${RELEASE}-mac-x64.dmg"
-    # - 'releases/*.*'
   overwrite: true
   skip_cleanup: true
   on:
     # https://docs.travis-ci.com/user/deployment
     # https://github.com/travis-ci/travis-ci/issues/6499
-    branch: master
+    branch: /^v[0-9]/ # apenas os branches com tags!
     tags: true  # Deploy app only when a tag is applied to the commit
     node: '6'
 
