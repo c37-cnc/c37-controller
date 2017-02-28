@@ -141,7 +141,7 @@ deploy:
     secure: "w+erVeQJ8g1jqVBl84CxS4jc+GuYyGWfjlTM3pN+Ma/Z/Ie8MeNhc9SmtcDbbzg+fmjMM2H5OF7kHvDGCnLkHNYLp8CLw8hl04X8HzB2K9ZoxQvchHh+acgZOY1Trif+12qhiVJEkL0oCtBJewwZ77QaBjhZnHsdu24rK3pyUYYbkt6zfudu/HPNUskDR8paoaK7g+5AF8VS6qSXawA50V4ljLyFj2WPWfTfvqMgNTLl60uALyW/K3iFBMu3UgNTX3kUUgn3nt1NIY4XW6lmaTJqKzxLa7giUy/Oj0AHUlG3a/MnfxVVyjjM0RV3ywAVDqQEEIQkh+Z/aGNVQG5W7RVeXTv0ncncy8vzNMKBKbUX2noT25tV66HT/t+qnPQEVYbnfW+q1jr92XpfOZGrU1mhN02ZmMAR/424zJLBY3k9HKDdvu+GRyxmIfvn7YvaAVz27Xh1kULlYCWhdQxYZVD/X3NqhpHZjnJHuNeUHmKtX3dF0Jekx1KGQEEcyJ28gukg780Lrqf0RFSMDRfmbQB7SF96ZBwizowYNtQJ4NYP2lPL9vxi4q76bDkkRqUPgJyYPXz468TvpUxSlYji0Bwp7a25za5W8piudBwZJAOj0woUtZGwkD9BH2uyqOg9pz+Q6C8tjid1pNlAj1sywwOaiXmwDEkkaYrnyWGgpbY="
   skip_cleanup: false
   file_glob: true
-  # draft: false
+  draft: false
   file: 
     - "releases/${RELEASE}-linux-i386.deb"
     - "releases/${RELEASE}-linux-amd64.deb"
