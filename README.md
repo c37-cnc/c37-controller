@@ -27,11 +27,12 @@
   </tbody>
 </table>
 
-<small style="float: right; font-size: 8px">
-  <a target="_blank" href="https://shields.io/" style="float: right;">
-    shields.io
-  </a>
-</small>
 
-
+<sub>
+  <sup>
+    <a target="_blank" href="https://shields.io/">
+      shields.io
+    </a>
+  </sup>
+</sub>
 
