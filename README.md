@@ -28,12 +28,8 @@
 </table>
 
 
-<div style="float: right">
-  <sup>
-    <a target="_blank" href="https://shields.io/">
-      shields.io
-    </a>
-  </sup>
-</div>
-
-
+<sup>
+  <a target="_blank" href="https://shields.io/">
+    shields.io
+  </a>
+</sup>
