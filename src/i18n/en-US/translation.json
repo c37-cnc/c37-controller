@@ -1,0 +1,40 @@
+{
+    "_last.translated": "",
+    "lang": "en",
+    "title": {
+        "text": "C37 - Controller"
+    },
+    "name": {
+        "text": "Controller"
+    },
+    "connection": {
+        "disconnected": {
+            "text": "Disconnected",
+            "hint": {
+                "title": "Disconnected",
+                "text": "zzzzz"
+            }
+        },
+        "connected": {
+            "text": "Connected",
+            "hint": {
+                "title": "connected",
+                "text": "dsdsd"
+            }
+        }
+    },
+    "setting": {
+        "text": "sssass",
+        "hint": {
+            "title": "d",
+            "text": "sssss"
+        }
+    },
+    "help": {
+        "text": "hhhh",
+        "hint": {
+            "title": "",
+            "text": ""
+        }
+    }
+}
