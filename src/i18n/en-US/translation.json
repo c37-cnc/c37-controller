@@ -11,30 +11,62 @@
         "disconnected": {
             "text": "Disconnected",
             "hint": {
-                "title": "Disconnected",
-                "text": "zzzzz"
+                "title": "Dummy",
+                "text": "Dummy Dummy"
             }
         },
         "connected": {
             "text": "Connected",
             "hint": {
-                "title": "connected",
-                "text": "dsdsd"
+                "title": "Dummy",
+                "text": "Dummy Dummy"
             }
         }
     },
+    "introduction": {
+        "text": "The C37 - Controller is developed and offered for free by"
+    },
     "setting": {
-        "text": "sssass",
+        "text": "Settings",
         "hint": {
-            "title": "d",
-            "text": "sssss"
+            "title": "Dummy",
+            "text": "Dummy Dummy"
         }
     },
     "help": {
-        "text": "hhhh",
+        "text": "Help Center",
         "hint": {
-            "title": "",
-            "text": ""
+            "title": "Dummy",
+            "text": "Dummy Dummy"
         }
+    },
+    "devices": {
+        "header": {
+            "text": "Devices"
+
+        },
+        "about": {
+            "text": "About connecting to your Equipment",
+            "linux": {
+                "text": "You must be allowed to run your device, run the command 'sudo chmod 666 /dev/tty{your device}'. More",
+                "link": {
+                    "text": "informations"
+                }
+            },
+            "windows": {
+                "text": "You must have correctly installed the CH340 driver (similar to Arduino). More",
+                "link": {
+                    "text": "informations"
+                }
+            },
+            "macOS": {
+                "text": "You must be allowed to run your device, run the command 'sudo chmod 666 /dev/tty{your device}'. More",
+                "link": {
+                    "text": "informations"
+                }
+            }
+        }
+
+
     }
 }
