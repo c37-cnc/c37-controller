@@ -33,6 +33,7 @@ data-hint-text
 
 
 
+https://pt.wikipedia.org/wiki/Internacionaliza%C3%A7%C3%A3o_(inform%C3%A1tica)
 https://developer.chrome.com/extensions/i18n
 http://www.i18nguy.com/unicode/language-identifiers.html
 
