@@ -1,4 +1,195 @@
 {
     "_last.translated": "",
-    "lang": "pt-BR"
+    "lang": "pt-BR",
+    "title": {
+        "text": "C37 - Controlador"
+    },
+    "name": {
+        "text": "Controlador"
+    },
+    "terms": {
+        "text": "Termos de Serviço"
+    },
+    "privacy": {
+    "text": "Política de Privacidade"
+    },
+    "connection": {
+        "disconnected": {
+            "text": "Disconectado",
+            "hint": {
+                "title": "Disconectado",
+                "text": "Dummy Dummy"
+            }
+        },
+        "connected": {
+            "text": "Conectado",
+            "hint": {
+                "title": "Conectado",
+                "text": "Dummy Dummy"
+            }
+        }
+    },
+    "introduction": {
+        "text": "O C37 - Controlador oferecido gratuitamente pela"
+    },
+    "setting": {
+        "text": "Settings",
+        "hint": {
+            "title": "Settings",
+            "text": "Dummy Dummy"
+        }
+    },
+    "help": {
+        "text": "Help Center",
+        "hint": {
+            "title": "Help Center",
+            "text": "Dummy Dummy"
+        }
+    },
+    "devices": {
+        "header": {
+            "text": "Devices"
+
+        },
+        "description": {
+            "text": "The C37 - Controller is compatible with:"
+        },
+        "about": {
+            "text": "About connecting to your Equipment",
+            "linux": {
+                "text": "You must be allowed to run your device, run the command 'sudo chmod 666 /dev/tty{your device}'. More",
+                "link": {
+                    "text": "informations"
+                }
+            },
+            "windows": {
+                "text": "You must have correctly installed the Arduino or CH340 driver. More",
+                "link": {
+                    "text": "informations"
+                }
+            },
+            "macOS": {
+                "text": "You must be allowed to run your device, run the command 'sudo chmod 666 /dev/tty{your device}'. More",
+                "link": {
+                    "text": "informations"
+                }
+            }
+        }
+    },
+    "gcode": {
+        "header": {
+            "text": "G-Code"
+        },
+        "open": {
+            "hint": {
+                "title": "Open G-Code file",
+                "text": "Dummy Dummy"
+            }
+        },
+        "reload": {
+            "hint": {
+                "title": "Reload G-Code file",
+                "text": "Dummy Dummy"
+            }
+        },
+        "content": {
+            "text": "No file selected",
+            "hint": {
+                "title": "G-Code Content",
+                "text": "Dummy Dummy"
+            }
+        },
+        "entire": {
+            "text": "Total",
+            "hint": {
+                "title": "Total",
+                "text": "Dummy Dummy"
+            }
+        },
+        "sent": {
+            "text": "Sent",
+            "hint": {
+                "title": "Sent",
+                "text": "Dummy Dummy"
+            }
+        },
+        "duration": {
+            "text": "Duration",
+            "hint": {
+                "title": "Duration",
+                "text": "Dummy Dummy"
+            }
+        }
+    },
+    "command": {
+        "header": {
+            "text": "Command"
+        },
+        "reset": {
+            "hint": {
+                "title": "Reset C37 - Controller",
+                "text": "Dummy Dummy"
+            }
+        },
+        "send": {
+            "hint": {
+                "title": "Command Editor",
+                "text": "Dummy Dummy"
+            }
+        }
+    },
+    "donation": {
+        "open": {
+            "text": "Donate now!"
+        },
+        "dialog": {
+            "header": {
+                "text": "Learn why Donate"
+            },
+            "title": {
+                "text": "Donate now!"
+            },
+            "content": {
+                "line-01": {
+                    "text": "Yes, it's free. The C37 - CNC offers you its services completely functional and without limit of time of use. For your personal projects as well as professional ones."
+                },
+                "line-02": {
+                    "text": "This project is funded through donations. If you think the C37 - Controller is useful, please consider donating $ 5.00 or more."
+                },
+                "line-03": {
+                    "text": "Your donations will make possible new features, bug fixes and the continued development of this software."
+                },
+                "line-04": {
+                    "text": "The donation will be made through the"
+                }
+            }
+
+        }
+    },
+    "position": {
+        "header": {
+            "text": "Position"
+        },
+        "zero-define": {
+            "text": "Define Start Point",
+            "hint": {
+                "title": "Define Start Point",
+                "text": "Dummy Dummy"
+            }
+        },
+        "zero-return": {
+            "text": "Return to Start Point",
+            "hint": {
+                "title": "Return to Start Point",
+                "text": "Dummy Dummy"
+            }
+        }
+    }
+
+    
+
+
+
+
+
 }
