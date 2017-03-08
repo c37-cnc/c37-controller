@@ -1,195 +1,490 @@
 {
     "_last.translated": "",
     "lang": "pt-BR",
-    "title": {
+    "name": {
         "text": "C37 - Controlador"
     },
-    "name": {
-        "text": "Controlador"
+    "description": {
+        "text": "O C37 - Controlador oferecido gratuitamente pela"
+    },
+    "devices": {
+        "button": {
+            "disconnected": {
+                "text": "Desconectado",
+                "hint": {
+                    "title": "Desconectado",
+                    "text": "Dummy Dummy"
+                }
+            },
+            "connected": {
+                "text": "Conectado",
+                "hint": {
+                    "title": "Conectado",
+                    "text": "Dummy Dummy"
+                }
+            }
+        },
+        "dialog": {
+            "header": {
+                "text": "Dispositivos"
+            },
+            "body": {
+                "description": {
+                    "text": "O C37 - Controlador é compatível com:"
+                },
+                "no-device": {
+                    "text": "Nenhum dispositivo conectado"
+                }
+            },
+            "footer": {
+                "text": "Sobre a conexão com seu Equipamento",
+                "linux": {
+                    "text": "Você deve ter permissão para executar seu dipositivo, execute o comando 'sudo chmod 666 /dev/tty{seu dispositivo}'. Mais",
+                    "link": {
+                        "text": "informações"
+                    }
+                },
+                "windows": {
+                    "text": "Você deve ter instalado corretamento o driver do Arduino ou CH340. Mais",
+                    "link": {
+                        "text": "informações"
+                    }
+                },
+                "macOS": {
+                    "text": "Você deve ter permissão para executar seu dipositivo, execute o comando 'sudo chmod 666 /dev/tty{seu dispositivo}'. Mais",
+                    "link": {
+                        "text": "informações"
+                    }
+                }
+            }
+        }
+    },
+    "setting": {
+        "button": {
+            "open": {
+                "text": "Configurações",
+                "hint": {
+                    "title": "Configurações",
+                    "text": "Dummy Dummy"
+                }
+            },
+            "close": {
+                "text": "Fechar"
+            }
+        },
+        "dialog": {
+            "header": {
+                "text": "Configurações"
+            },
+            "body": {},
+            "footer": {}
+        }
+    },
+    "help": {
+        "button": {
+            "open": {
+                "text": "Central de Ajuda",
+                "hint": {
+                    "title": "Central de Ajuda",
+                    "text": "Dummy Dummy"
+                }
+            }
+        },
+        "dialog": {
+            "header": {
+                "text": "Central de Ajuda"
+            },
+            "body": {
+                "title": {
+                    "text": "Bem-vindo ao C37 - Controlador"
+                },
+                "line-01": {
+                    "text": "Sim, é gratuito. A C37 - CNC oferece a vocês seus serviços completamente funcionais e sem limite de tempo de uso. Para seus projetos pessoais e também profissionais."
+                },
+                "line-02": {
+                    "text": "Isso porque, nossa estratégia provém dos nossos valores. E, contamos com sua doação para continar desenvolvendo e oferecendo serviços cada vez melhores!"
+                },
+                "search": {
+                    "text": "Pesquisar na Central de Ajuda"
+                },
+                "donation": {
+                    "text": "Contamos com a sua doação para o aprimoramento de nossos serviços!"
+                },
+                "help": {
+                    "text": "Você encontrará auxilio no grupo do"
+                }
+            }
+        }
+    },
+    "i18n": {
+        "option-group": {
+            "header": {
+                "text": "Selecione o seu idioma"
+            },
+            "footer": {
+                "text": "Sugerir Tradução"
+            }
+        }
+    },
+    "gcode": {
+        "box": {
+            "header": {
+                "text": "Código G",
+                "button": {
+                    "open": {
+                        "hint": {
+                            "title": "Procurar arquivo Código G",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "reload": {
+                        "hint": {
+                            "title": "Recarregar arquivo Código G",
+                            "text": "Dummy Dummy"
+                        }
+                    }
+                }
+            },
+            "body": {
+                "text": "Nenhum arquivo selecionado",
+                "hint": {
+                    "title": "Conteudo do Arquivo",
+                    "text": "Dummy Dummy"
+                }
+            },
+            "footer": {
+                "entire": {
+                    "text": "Total",
+                    "hint": {
+                        "title": "Total",
+                        "text": "Dummy Dummy"
+                    }
+                },
+                "sent": {
+                    "text": "Enviados",
+                    "hint": {
+                        "title": "Enviados",
+                        "text": "Dummy Dummy"
+                    }
+                },
+                "duration": {
+                    "text": "Duração",
+                    "hint": {
+                        "title": "Duração",
+                        "text": "Dummy Dummy"
+                    }
+                }
+            }
+        }
+    },
+    "command": {
+        "box": {
+            "header": {
+                "text": "Comandos",
+                "button": {
+                    "reset": {
+                        "hint": {
+                            "title": "Inicializar o C37 - Controlador",
+                            "text": "Dummy Dummy"
+                        }
+                    }
+                }
+            },
+            "body": {
+                "hint": {
+                    "title": "Editor de Comandos",
+                    "text": "Dummy Dummy"
+                }
+            }
+        }
+    },
+    "donation": {
+        "button": {
+            "open": {
+                "text": "Doe agora!"
+            }
+        },
+        "dialog": {
+            "header": {
+                "text": "Saiba por que Doar"
+            },
+            "body": {
+                "title": {
+                    "text": "Doe agora!"
+                },
+                "line-01": {
+                    "text": "Sim, é gratuito. A C37 - CNC oferece a vocês seus serviços completamente funcionais e sem limite de tempo de uso. Para seus projetos pessoais e também profissionais."
+                },
+                "line-02": {
+                    "text": "Este projeto é financiado através de doações. Se você achar que o C37 - Controlador é útil, por favor considere doar R$10,00 ou mais."
+                },
+                "line-03": {
+                    "text": "Suas doações farão possíveis novos recursos, correções de bugs e o desenvolvimento contínuo deste software."
+                },
+                "line-04": {
+                    "text": "A doação será realizada através do"
+                }
+            }
+        }
+    },
+    "milling": {
+        "box": {
+            "header": {
+                "text": "Usinagem"
+            },
+            "body": {
+                "tool": {
+                    "text": "Ferramenta"
+                },
+                "type": {
+                    "text": "Tipo"
+                },
+                "speed": {
+                    "text": "Velocidade"
+                }
+            }
+        }
+    },
+    "position": {
+        "box": {
+            "header": {
+                "text": "Posição"
+            },
+            "footer": {
+                "zero-define": {
+                    "text": "Ponto Inícial de Usinagem",
+                    "hint": {
+                        "title": "Ponto Inícial de Usinagem",
+                        "text": "Dummy Dummy"
+                    }
+                },
+                "zero-return": {
+                    "text": "Retornar para o Ponto Inícial",
+                    "hint": {
+                        "title": "Retornar para o Ponto Inícial",
+                        "text": "Dummy Dummy"
+                    }
+                }
+            }
+        }
+    },
+    "controls": {
+        "box": {
+            "header": {
+                "text": "Controles"
+            },
+            "body": {
+                "displace-tool": {
+                    "text": "Deslocamento da Ferramenta",
+                    "03": {
+                        "hint": {
+                            "title": "03",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "02": {
+                        "hint": {
+                            "title": "02",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "01": {
+                        "hint": {
+                            "title": "01",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "0-1": {
+                        "hint": {
+                            "title": "0.1",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "0-01": {
+                        "hint": {
+                            "title": "0.01",
+                            "text": "Dummy Dummy"
+                        }
+                    }
+                },
+                "motion-description": {
+                    "text": "Controles no teclado do Computador",
+                    "hint": {
+                        "title": "Keyboard Controls",
+                        "text": "Dummy Dummy"
+                    }
+                },
+                "x-": {
+                    "hint": {
+                        "title": "x-",
+                        "text": "Dummy Dummy"
+                    }
+                },
+                "x+": {
+                    "hint": {
+                        "title": "x+",
+                        "text": "Dummy Dummy"
+                    }
+                },
+                "y-": {
+                    "hint": {
+                        "title": "y-",
+                        "text": "Dummy Dummy"
+                    }
+                },
+                "y+": {
+                    "hint": {
+                        "title": "y+",
+                        "text": "Dummy Dummy"
+                    }
+                },
+                "z-": {
+                    "hint": {
+                        "title": "z-",
+                        "text": "Dummy Dummy"
+                    }
+                },
+                "z+": {
+                    "hint": {
+                        "title": "z+",
+                        "text": "Dummy Dummy"
+                    }
+                },
+                "free-movement": {
+                    "hint": {
+                        "title": "Free Movement",
+                        "text": "Dummy Dummy"
+                    }
+                },
+                "spindle": {
+                    "text": "Spindle",
+                    "hint": {
+                        "title": "Spindle",
+                        "text": "Dummy Dummy"
+                    }
+                },
+                "coolant": {
+                    "text": "Refrigeração",
+                    "hint": {
+                        "title": "Refrigeração",
+                        "text": "Dummy Dummy"
+                    }
+                }
+
+            },
+            "footer": {
+                "explore-level-material": {
+                    "text": "Explorar & Nivelar Material",
+                    "explore": {
+                        "text": "Explorar",
+                        "hint": {
+                            "title": "Explorar",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "level": {
+                        "text": "Nivelar",
+                        "hint": {
+                            "title": "Nivelar",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "start": {
+                        "text": "Iniciar",
+                        "hint": {
+                            "title": "Iniciar",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "collect": {
+                        "text": "Coletar",
+                        "hint": {
+                            "title": "Coletar",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "stop": {
+                        "text": "Parar",
+                        "hint": {
+                            "title": "Parar",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "remove": {
+                        "text": "Excluir",
+                        "hint": {
+                            "title": "Excluir",
+                            "text": "Dummy Dummy"
+                        }
+                    }
+
+                },
+                "milling": {
+                    "text": "Usinagem",
+                    "planner": {
+                        "hint": {
+                            "title": "Planejador de Rotas",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "start": {
+                        "text": "Iniciar",
+                        "hint": {
+                            "title": "Iniciar",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "pause": {
+                        "text": "Pausar",
+                        "hint": {
+                            "title": "Pausar",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "stop": {
+                        "text": "Parar",
+                        "hint": {
+                            "title": "Parar",
+                            "text": "Dummy Dummy"
+                        }
+                    }
+
+                }
+            }
+        }
+    },
+    "viewer": {
+        "box": {
+            "home": {
+                "hint": {
+                    "title": "Home",
+                    "text": "Dummy Dummy"
+                }
+            },
+            "zoom-more": {
+                "hint": {
+                    "title": "Zoom More",
+                    "text": "Dummy Dummy"
+                }
+            },
+            "zoom-less": {
+                "hint": {
+                    "title": "Zoom Less",
+                    "text": "Dummy Dummy"
+                }
+            },
+            "move": {
+                "hint": {
+                    "title": "Move",
+                    "text": "Dummy Dummy"
+                }
+            }
+        }
     },
     "terms": {
         "text": "Termos de Serviço"
     },
     "privacy": {
-    "text": "Política de Privacidade"
-    },
-    "connection": {
-        "disconnected": {
-            "text": "Disconectado",
-            "hint": {
-                "title": "Disconectado",
-                "text": "Dummy Dummy"
-            }
-        },
-        "connected": {
-            "text": "Conectado",
-            "hint": {
-                "title": "Conectado",
-                "text": "Dummy Dummy"
-            }
-        }
-    },
-    "introduction": {
-        "text": "O C37 - Controlador oferecido gratuitamente pela"
-    },
-    "setting": {
-        "text": "Settings",
-        "hint": {
-            "title": "Settings",
-            "text": "Dummy Dummy"
-        }
-    },
-    "help": {
-        "text": "Help Center",
-        "hint": {
-            "title": "Help Center",
-            "text": "Dummy Dummy"
-        }
-    },
-    "devices": {
-        "header": {
-            "text": "Devices"
-
-        },
-        "description": {
-            "text": "The C37 - Controller is compatible with:"
-        },
-        "about": {
-            "text": "About connecting to your Equipment",
-            "linux": {
-                "text": "You must be allowed to run your device, run the command 'sudo chmod 666 /dev/tty{your device}'. More",
-                "link": {
-                    "text": "informations"
-                }
-            },
-            "windows": {
-                "text": "You must have correctly installed the Arduino or CH340 driver. More",
-                "link": {
-                    "text": "informations"
-                }
-            },
-            "macOS": {
-                "text": "You must be allowed to run your device, run the command 'sudo chmod 666 /dev/tty{your device}'. More",
-                "link": {
-                    "text": "informations"
-                }
-            }
-        }
-    },
-    "gcode": {
-        "header": {
-            "text": "G-Code"
-        },
-        "open": {
-            "hint": {
-                "title": "Open G-Code file",
-                "text": "Dummy Dummy"
-            }
-        },
-        "reload": {
-            "hint": {
-                "title": "Reload G-Code file",
-                "text": "Dummy Dummy"
-            }
-        },
-        "content": {
-            "text": "No file selected",
-            "hint": {
-                "title": "G-Code Content",
-                "text": "Dummy Dummy"
-            }
-        },
-        "entire": {
-            "text": "Total",
-            "hint": {
-                "title": "Total",
-                "text": "Dummy Dummy"
-            }
-        },
-        "sent": {
-            "text": "Sent",
-            "hint": {
-                "title": "Sent",
-                "text": "Dummy Dummy"
-            }
-        },
-        "duration": {
-            "text": "Duration",
-            "hint": {
-                "title": "Duration",
-                "text": "Dummy Dummy"
-            }
-        }
-    },
-    "command": {
-        "header": {
-            "text": "Command"
-        },
-        "reset": {
-            "hint": {
-                "title": "Reset C37 - Controller",
-                "text": "Dummy Dummy"
-            }
-        },
-        "send": {
-            "hint": {
-                "title": "Command Editor",
-                "text": "Dummy Dummy"
-            }
-        }
-    },
-    "donation": {
-        "open": {
-            "text": "Donate now!"
-        },
-        "dialog": {
-            "header": {
-                "text": "Learn why Donate"
-            },
-            "title": {
-                "text": "Donate now!"
-            },
-            "content": {
-                "line-01": {
-                    "text": "Yes, it's free. The C37 - CNC offers you its services completely functional and without limit of time of use. For your personal projects as well as professional ones."
-                },
-                "line-02": {
-                    "text": "This project is funded through donations. If you think the C37 - Controller is useful, please consider donating $ 5.00 or more."
-                },
-                "line-03": {
-                    "text": "Your donations will make possible new features, bug fixes and the continued development of this software."
-                },
-                "line-04": {
-                    "text": "The donation will be made through the"
-                }
-            }
-
-        }
-    },
-    "position": {
-        "header": {
-            "text": "Position"
-        },
-        "zero-define": {
-            "text": "Define Start Point",
-            "hint": {
-                "title": "Define Start Point",
-                "text": "Dummy Dummy"
-            }
-        },
-        "zero-return": {
-            "text": "Return to Start Point",
-            "hint": {
-                "title": "Return to Start Point",
-                "text": "Dummy Dummy"
-            }
-        }
+        "text": "Política de Privacidade"
     }
-
-    
-
-
-
-
-
 }

@@ -1,155 +1,217 @@
 {
     "_last.translated": "",
     "lang": "en-US",
-    "title": {
+    "name": {
         "text": "C37 - Controller"
     },
-    "name": {
-        "text": "Controller"
+    "description": {
+        "text": "The C37 - Controller is offered for free by"
     },
-    "terms": {
-        "text": "Terms"
-    },
-    "privacy": {
-        "text": "Privacy"
-    },
-    "connection": {
-        "disconnected": {
-            "text": "Disconnected",
-            "hint": {
-                "title": "Disconnected",
-                "text": "Dummy Dummy"
+    "devices": {
+        "button": {
+            "disconnected": {
+                "text": "Disconnected",
+                "hint": {
+                    "title": "Disconnected",
+                    "text": "Dummy Dummy"
+                }
+            },
+            "connected": {
+                "text": "Connected",
+                "hint": {
+                    "title": "Connected",
+                    "text": "Dummy Dummy"
+                }
             }
         },
-        "connected": {
-            "text": "Connected",
-            "hint": {
-                "title": "Connected",
-                "text": "Dummy Dummy"
+        "dialog": {
+            "header": {
+                "text": "Devices"
+            },
+            "body": {
+                "description": {
+                    "text": "The C37 - Controller is compatible with:"
+                },
+                "no-device": {
+                    "text": "No connected devices"
+                }
+            },
+            "footer": {
+                "text": "About connecting to your Equipment",
+                "linux": {
+                    "text": "You must be allowed to run your device, run the command 'sudo chmod 666 /dev/tty{your device}'. More",
+                    "link": {
+                        "text": "informations"
+                    }
+                },
+                "windows": {
+                    "text": "You must have correctly installed the Arduino or CH340 driver. More",
+                    "link": {
+                        "text": "informations"
+                    }
+                },
+                "macOS": {
+                    "text": "You must be allowed to run your device, run the command 'sudo chmod 666 /dev/tty{your device}'. More",
+                    "link": {
+                        "text": "informations"
+                    }
+                }
             }
         }
     },
-    "introduction": {
-        "text": "The C37 - Controller is offered for free by"
-    },
     "setting": {
-        "text": "Settings",
-        "hint": {
-            "title": "Settings",
-            "text": "Dummy Dummy"
+        "button": {
+            "open": {
+                "text": "Settings",
+                "hint": {
+                    "title": "Settings",
+                    "text": "Dummy Dummy"
+                }
+            },
+            "close": {
+                "text": "Close"
+            }
+        },
+        "dialog": {
+            "header": {
+                "text": "Help Center"
+            },
+            "body": {},
+            "footer": {}
         }
     },
     "help": {
-        "text": "Help Center",
-        "hint": {
-            "title": "Help Center",
-            "text": "Dummy Dummy"
+        "button": {
+            "open": {
+                "text": "Help Center",
+                "hint": {
+                    "title": "Help Center",
+                    "text": "Dummy Dummy"
+                }
+            }
+        },
+        "dialog": {
+            "header": {
+                "text": "Help Center"
+            },
+            "body": {
+                "title": {
+                    "text": "Welcome to C37 - Controller"
+                },
+                "line-01": {
+                    "text": "Yes, it's free. The C37 - CNC offers you its services completely functional and without limit of time of use. For your personal projects as well as professional ones."
+                },
+                "line-02": {
+                    "text": "That's because our strategy comes from our values. And, we count on your donation to continue developing and offering better services!"
+                },
+                "search": {
+                    "text": "Search the Help Center"
+                },
+                "donation": {
+                    "text": "We count on your donation for the improvement of our services!"
+                },
+                "help": {
+                    "text": "You will find help in the"
+                }
+            }
         }
     },
-    "devices": {
-        "header": {
-            "text": "Devices"
-
-        },
-        "description": {
-            "text": "The C37 - Controller is compatible with:"
-        },
-        "about": {
-            "text": "About connecting to your Equipment",
-            "linux": {
-                "text": "You must be allowed to run your device, run the command 'sudo chmod 666 /dev/tty{your device}'. More",
-                "link": {
-                    "text": "informations"
-                }
+    "i18n": {
+        "option-group": {
+            "header": {
+                "text": "Select your language"
             },
-            "windows": {
-                "text": "You must have correctly installed the Arduino or CH340 driver. More",
-                "link": {
-                    "text": "informations"
-                }
-            },
-            "macOS": {
-                "text": "You must be allowed to run your device, run the command 'sudo chmod 666 /dev/tty{your device}'. More",
-                "link": {
-                    "text": "informations"
-                }
+            "footer": {
+                "text": "Suggest translation"
             }
         }
     },
     "gcode": {
-        "header": {
-            "text": "G-Code"
-        },
-        "open": {
-            "hint": {
-                "title": "Open G-Code file",
-                "text": "Dummy Dummy"
-            }
-        },
-        "reload": {
-            "hint": {
-                "title": "Reload G-Code file",
-                "text": "Dummy Dummy"
-            }
-        },
-        "content": {
-            "text": "No file selected",
-            "hint": {
-                "title": "G-Code Content",
-                "text": "Dummy Dummy"
-            }
-        },
-        "entire": {
-            "text": "Total",
-            "hint": {
-                "title": "Total",
-                "text": "Dummy Dummy"
-            }
-        },
-        "sent": {
-            "text": "Sent",
-            "hint": {
-                "title": "Sent",
-                "text": "Dummy Dummy"
-            }
-        },
-        "duration": {
-            "text": "Duration",
-            "hint": {
-                "title": "Duration",
-                "text": "Dummy Dummy"
+        "box": {
+            "header": {
+                "text": "G-Code",
+                "button": {
+                    "open": {
+                        "hint": {
+                            "title": "Open G-Code file",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "reload": {
+                        "hint": {
+                            "title": "Reload G-Code file",
+                            "text": "Dummy Dummy"
+                        }
+                    }
+                }
+            },
+            "body": {
+                "text": "No file selected",
+                "hint": {
+                    "title": "G-Code Content",
+                    "text": "Dummy Dummy"
+                }
+            },
+            "footer": {
+                "entire": {
+                    "text": "Total",
+                    "hint": {
+                        "title": "Total",
+                        "text": "Dummy Dummy"
+                    }
+                },
+                "sent": {
+                    "text": "Sent",
+                    "hint": {
+                        "title": "Sent",
+                        "text": "Dummy Dummy"
+                    }
+                },
+                "duration": {
+                    "text": "Duration",
+                    "hint": {
+                        "title": "Duration",
+                        "text": "Dummy Dummy"
+                    }
+                }
             }
         }
     },
     "command": {
-        "header": {
-            "text": "Command"
-        },
-        "reset": {
-            "hint": {
-                "title": "Reset C37 - Controller",
-                "text": "Dummy Dummy"
-            }
-        },
-        "send": {
-            "hint": {
-                "title": "Command Editor",
-                "text": "Dummy Dummy"
+        "box": {
+            "header": {
+                "text": "Command",
+                "button": {
+                    "reset": {
+                        "hint": {
+                            "title": "Reset C37 - Controller",
+                            "text": "Dummy Dummy"
+                        }
+                    }
+                }
+            },
+            "body": {
+                "hint": {
+                    "title": "Command Editor",
+                    "text": "Dummy Dummy"
+                }
             }
         }
     },
     "donation": {
-        "open": {
-            "text": "Donate now!"
+        "button": {
+            "open": {
+                "text": "Donate now!"
+            }
         },
         "dialog": {
             "header": {
                 "text": "Learn why Donate"
             },
-            "title": {
-                "text": "Donate now!"
-            },
-            "content": {
+            "body": {
+                "title": {
+                    "text": "Donate now!"
+                },
                 "line-01": {
                     "text": "Yes, it's free. The C37 - CNC offers you its services completely functional and without limit of time of use. For your personal projects as well as professional ones."
                 },
@@ -163,33 +225,266 @@
                     "text": "The donation will be made through the"
                 }
             }
-
+        }
+    },
+    "milling": {
+        "box": {
+            "header": {
+                "text": "Milling"
+            },
+            "body": {
+                "tool": {
+                    "text": "Tool"
+                },
+                "type": {
+                    "text": "Type"
+                },
+                "speed": {
+                    "text": "Speed"
+                }
+            }
         }
     },
     "position": {
-        "header": {
-            "text": "Position"
-        },
-        "zero-define": {
-            "text": "Define Start Point",
-            "hint": {
-                "title": "Define Start Point",
-                "text": "Dummy Dummy"
-            }
-        },
-        "zero-return": {
-            "text": "Return to Start Point",
-            "hint": {
-                "title": "Return to Start Point",
-                "text": "Dummy Dummy"
+        "box": {
+            "header": {
+                "text": "Position"
+            },
+            "footer": {
+                "zero-define": {
+                    "text": "Define Start Point",
+                    "hint": {
+                        "title": "Define Start Point",
+                        "text": "Dummy Dummy"
+                    }
+                },
+                "zero-return": {
+                    "text": "Return to Start Point",
+                    "hint": {
+                        "title": "Return to Start Point",
+                        "text": "Dummy Dummy"
+                    }
+                }
             }
         }
+    },
+    "controls": {
+        "box": {
+            "header": {
+                "text": "Controls"
+            },
+            "body": {
+                "displace-tool": {
+                    "text": "Displacement of Tool",
+                    "03": {
+                        "hint": {
+                            "title": "03",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "02": {
+                        "hint": {
+                            "title": "02",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "01": {
+                        "hint": {
+                            "title": "01",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "0-1": {
+                        "hint": {
+                            "title": "0.1",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "0-01": {
+                        "hint": {
+                            "title": "0.01",
+                            "text": "Dummy Dummy"
+                        }
+                    }
+                },
+                "motion-description": {
+                    "text": "Computer Keyboard Controls",
+                    "hint": {
+                        "title": "Keyboard Controls",
+                        "text": "Dummy Dummy"
+                    }
+                },
+                "x-": {
+                    "hint": {
+                        "title": "x-",
+                        "text": "Dummy Dummy"
+                    }
+                },
+                "x+": {
+                    "hint": {
+                        "title": "x+",
+                        "text": "Dummy Dummy"
+                    }
+                },
+                "y-": {
+                    "hint": {
+                        "title": "y-",
+                        "text": "Dummy Dummy"
+                    }
+                },
+                "y+": {
+                    "hint": {
+                        "title": "y+",
+                        "text": "Dummy Dummy"
+                    }
+                },
+                "z-": {
+                    "hint": {
+                        "title": "z-",
+                        "text": "Dummy Dummy"
+                    }
+                },
+                "z+": {
+                    "hint": {
+                        "title": "z+",
+                        "text": "Dummy Dummy"
+                    }
+                },
+                "free-movement": {
+                    "hint": {
+                        "title": "Free Movement",
+                        "text": "Dummy Dummy"
+                    }
+                },
+                "spindle": {
+                    "text": "Spindle",
+                    "hint": {
+                        "title": "Spindle",
+                        "text": "Dummy Dummy"
+                    }
+                },
+                "coolant": {
+                    "text": "Coolant",
+                    "hint": {
+                        "title": "Coolant",
+                        "text": "Dummy Dummy"
+                    }
+                }
+
+            },
+            "footer": {
+                "explore-level-material": {
+                    "text": "Explore & Level Material",
+                    "explore": {
+                        "text": "Explore",
+                        "hint": {
+                            "title": "Explore",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "level": {
+                        "text": "Level",
+                        "hint": {
+                            "title": "Level",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "start": {
+                        "text": "Start",
+                        "hint": {
+                            "title": "Start",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "collect": {
+                        "text": "Collect",
+                        "hint": {
+                            "title": "Collect",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "stop": {
+                        "text": "Stop",
+                        "hint": {
+                            "title": "Stop",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "remove": {
+                        "text": "Delete",
+                        "hint": {
+                            "title": "Delete",
+                            "text": "Dummy Dummy"
+                        }
+                    }
+
+                },
+                "milling": {
+                    "text": "Milling",
+                    "planner": {
+                        "hint": {
+                            "title": "Route Planner",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "start": {
+                        "text": "Start",
+                        "hint": {
+                            "title": "Start",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "pause": {
+                        "text": "Pause",
+                        "hint": {
+                            "title": "Pause",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "stop": {
+                        "text": "Stop",
+                        "hint": {
+                            "title": "Stop",
+                            "text": "Dummy Dummy"
+                        }
+                    }
+
+                }
+            }
+        }
+    },
+    "viewer": {
+        "box": {
+            "home": {
+                "hint": {
+                    "title": "Home",
+                    "text": "Dummy Dummy"
+                }
+            },
+            "zoom-more": {
+                "hint": {
+                    "title": "Zoom More",
+                    "text": "Dummy Dummy"
+                }
+            },
+            "zoom-less": {
+                "hint": {
+                    "title": "Zoom Less",
+                    "text": "Dummy Dummy"
+                }
+            },
+            "move": {
+                "hint": {
+                    "title": "Move",
+                    "text": "Dummy Dummy"
+                }
+            }
+        }
+    },
+    "terms": {
+        "text": "Terms"
+    },
+    "privacy": {
+        "text": "Privacy"
     }
-
-    
-
-
-
-
-
 }
