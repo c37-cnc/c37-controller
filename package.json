@@ -1,7 +1,7 @@
 {
   "name": "c37-controller-desktop",
   "productName": "c37-controller-desktop",
-  "version": "0.0.177",
+  "version": "0.0.178",
   "description": "C37 - Controlador - Desktop",
   "homepage": "https://controller.c37.co/",
   "license": "CC BY-NC-ND 4.0",
@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "electron": "latest",
-    "electron-builder": "^15.1.0"
+    "electron-builder": "^14.4.0"
   },
   "scripts": {
     "build:mac-x64": "build --mac",
