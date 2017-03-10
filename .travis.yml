@@ -94,8 +94,9 @@ after_success:
       npm run build:mac-x64;
 
       ls -al output output/*;
-      mv -f "output/${PACKAGE_NAME}-${PACKAGE_VERSION}.dmg" "releases/${RELEASE}-mac-x64.dmg";
-      # mv -f "output/mac/${PACKAGE_NAME}-${PACKAGE_VERSION}.dmg" "releases/${RELEASE}-mac-x64.dmg";
+      # path para versaa 14 de electron-builder
+      #mv -f "output/${PACKAGE_NAME}-${PACKAGE_VERSION}.dmg" "releases/${RELEASE}-mac-x64.dmg";
+      mv -f "output/mac/${PACKAGE_NAME}-${PACKAGE_VERSION}.dmg" "releases/${RELEASE}-mac-x64.dmg";
       #mv -f "output/mac/${PACKAGE_NAME}.app" "releases/${RELEASE}-mac-x64.app";
 
       ls -al releases/*
