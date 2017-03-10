@@ -457,25 +457,25 @@
         "box": {
             "home": {
                 "hint": {
-                    "title": "Home",
+                    "title": "Ponto de Início",
                     "text": "Dummy Dummy"
                 }
             },
             "zoom-more": {
                 "hint": {
-                    "title": "Zoom More",
+                    "title": "Mais Zoom",
                     "text": "Dummy Dummy"
                 }
             },
             "zoom-less": {
                 "hint": {
-                    "title": "Zoom Less",
+                    "title": "Menos Zoom",
                     "text": "Dummy Dummy"
                 }
             },
             "move": {
                 "hint": {
-                    "title": "Move",
+                    "title": "Mover",
                     "text": "Dummy Dummy"
                 }
             }
