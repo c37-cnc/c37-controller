@@ -37,9 +37,9 @@ branches:
   only:
   - /^v[0-9]/ # apenas os branches com tags!
   
-cache:
-  directories:
-    - $HOME/.electron
+# cache:
+#   directories:
+#     - $HOME/.electron
 
 addons:
   apt:
