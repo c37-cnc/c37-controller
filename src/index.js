@@ -19,13 +19,13 @@ app.on('ready', function () {
     // https://github.com/electron/electron/blob/master/docs-translations/pt-BR/api/browser-window.md
     win = new BrowserWindow({
         // width: 1400,
-        // height: 575,
+        height: 575,
 
         // width: 1020,
         // height: 575,
 
         width: 1700,
-        height: 1000,
+        // height: 1000,
         frame: false,
         toolbar: false,
         transparent: true,
