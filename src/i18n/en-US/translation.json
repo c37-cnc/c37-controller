@@ -136,12 +136,6 @@
                             "title": "Open G-Code file",
                             "text": "Dummy Dummy"
                         }
-                    },
-                    "reload": {
-                        "hint": {
-                            "title": "Reload G-Code file",
-                            "text": "Dummy Dummy"
-                        }
                     }
                 }
             },

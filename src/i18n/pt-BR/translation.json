@@ -133,13 +133,7 @@
                 "button": {
                     "open": {
                         "hint": {
-                            "title": "Procurar arquivo Código G",
-                            "text": "Dummy Dummy"
-                        }
-                    },
-                    "reload": {
-                        "hint": {
-                            "title": "Recarregar arquivo Código G",
+                            "title": "Abrir arquivo Código G",
                             "text": "Dummy Dummy"
                         }
                     }
