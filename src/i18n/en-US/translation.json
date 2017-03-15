@@ -473,31 +473,36 @@
                     "text": "Dummy Dummy"
                 }
             }
-        },
-        "performance": {
-            "text": "<strong>I configured the C37 - Controller for its best performance.</strong><br><div class='text-justify'>Your computer has a 2-core processor and a 32-bit Operating System</div>"
         }
     },
-    "message":{
-        "success":{
+    "message": {
+        "success": {
             "header": {
                 "text": "😃 Everything is OK!"
             }
         },
-        "info":{
+        "info": {
             "header": {
                 "text": "🎤 The C37 - Controller informs"
             }
         },
-        "warn":{
+        "warn": {
             "header": {
-                "text": "⚠ Message of Danger"
+                "text": "⚠ Warning Message"
             }
         },
-        "danger":{
+        "danger": {
             "header": {
                 "text": "🐛 Oops, an Bug"
             }
+        }
+    },
+    "performance": {
+        "viewer": {
+            "text": "<strong>I configured the C37 - Controller for its best performance.</strong><br><div class='text-justify'>Your computer has a 2-core processor and a 32-bit Operating System</div>"
+        },
+        "gcode": {
+            "text": "<strong>Your file has more than 7000 lines.</strong><br><div class='text-justify'>Probably there will be slow points in the execution of your work</div>"
         }
     },
     "terms": {

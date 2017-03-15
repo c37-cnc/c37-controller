@@ -473,9 +473,6 @@
                     "text": "Dummy Dummy"
                 }
             }
-        },
-        "performance": {
-            "text": "<strong>Configurei o C37 - Controlador para sua melhor Performance.</strong><br><div class='text-justify'>Seu computador possui um processador com 2 núcleos e um Sistema Operacional de 32-bit</div>"
         }
     },
     "message": {
@@ -491,13 +488,21 @@
         },
         "warn": {
             "header": {
-                "text": "⚠ Mensagem de Perigo"
+                "text": "⚠ Mensagem de Aviso"
             }
         },
         "danger": {
             "header": {
                 "text": "🐛 Oops, um Bug"
             }
+        }
+    },
+    "performance":{
+        "viewer":{
+            "text": "<strong>Configurei o C37 - Controlador para sua melhor Performance.</strong><br><div class='text-justify'>Seu computador possui um processador com 2 núcleos e um Sistema Operacional de 32-bit</div>"
+        },
+        "gcode":{
+            "text": "<strong>Seu arquivo possui mais de 7000 linhas.</strong><br><div class='text-justify'>Provavelmente haverá pontos de lentidão na execução de seu trabalho</div>"
         }
     },
     "terms": {
