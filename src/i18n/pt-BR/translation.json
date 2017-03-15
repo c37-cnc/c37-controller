@@ -473,27 +473,30 @@
                     "text": "Dummy Dummy"
                 }
             }
+        },
+        "performance": {
+            "text": "<strong>Configurei o C37 - Controlador para sua melhor Performance.</strong><br><div class='text-justify'>Seu computador possui um processador com 2 núcleos e um Sistema Operacional de 32-bit</div>"
         }
     },
-    "message":{
-        "success":{
+    "message": {
+        "success": {
             "header": {
                 "text": "😃 Tudo Ok!"
             }
         },
-        "info":{
+        "info": {
             "header": {
                 "text": "🎤 O C37 - Controlador informa"
             }
         },
-        "warn":{
+        "warn": {
             "header": {
                 "text": "⚠ Mensagem de Perigo"
             }
         },
-        "danger":{
+        "danger": {
             "header": {
-                "text": "🐛 Oops um Erro"
+                "text": "🐛 Oops, um Bug"
             }
         }
     },

@@ -473,6 +473,9 @@
                     "text": "Dummy Dummy"
                 }
             }
+        },
+        "performance": {
+            "text": "<strong>I configured the C37 - Controller for its best performance.</strong><br><div class='text-justify'>Your computer has a 2-core processor and a 32-bit Operating System</div>"
         }
     },
     "message":{
@@ -493,7 +496,7 @@
         },
         "danger":{
             "header": {
-                "text": "🐛 Oops, an error"
+                "text": "🐛 Oops, an Bug"
             }
         }
     },
