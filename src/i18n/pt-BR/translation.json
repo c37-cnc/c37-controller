@@ -476,6 +476,16 @@
         }
     },
     "message": {
+        "header": {
+            "action": {
+                "cloud-send": {
+                    "hint": {
+                        "title": "Enviar este Log de Erro",
+                        "text": "Enviando seu Log de Erro nos vamos poder analizar seu conteúdo e, trabalhar para melhorar o C37 - Controlador"
+                    }
+                }
+            }
+        },
         "success": {
             "header": {
                 "text": "😃 Tudo Ok!"
@@ -497,12 +507,12 @@
             }
         }
     },
-    "performance":{
-        "viewer":{
+    "performance": {
+        "viewer": {
             "text": "<strong>Configurei o C37 - Controlador para sua melhor Performance.</strong><br><div class='text-justify'>Seu computador possui um processador com 2 núcleos e um Sistema Operacional de 32-bit</div>"
         },
-        "gcode":{
-            "text": "<strong>Seu arquivo possui mais de 7000 linhas.</strong><br><div class='text-justify'>Provavelmente haverá pontos de lentidão na execução de seu trabalho</div>"
+        "gcode": {
+            "text": "<strong>Seu arquivo possui mais de 7000 linhas.</strong><br><div class='text-justify'>Pode haver pontos de lentidão na execução de seu trabalho</div>"
         }
     },
     "terms": {
