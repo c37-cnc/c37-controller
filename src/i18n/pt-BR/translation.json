@@ -475,6 +475,28 @@
             }
         }
     },
+    "message":{
+        "success":{
+            "header": {
+                "text": "😃 Tudo Ok!"
+            }
+        },
+        "info":{
+            "header": {
+                "text": "ℹ️ O C37 - Controlador informa"
+            }
+        },
+        "warn":{
+            "header": {
+                "text": "⚠ Mensagem de Perigo"
+            }
+        },
+        "danger":{
+            "header": {
+                "text": "🔥 Oops um Erro"
+            }
+        }
+    },
     "terms": {
         "text": "Termos de Serviço"
     },

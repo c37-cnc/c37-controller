@@ -18,13 +18,13 @@ app.on('ready', function () {
     // Create the browser window.
     // https://github.com/electron/electron/blob/master/docs-translations/pt-BR/api/browser-window.md
     win = new BrowserWindow({
-        // width: 1400,
+        width: 1020,
         height: 575,
 
-        // width: 1020,
-        // height: 575,
+        // width: 1400,
+        // height: 1000,
 
-        width: 1700,
+        // width: 1700,
         // height: 1000,
         frame: false,
         toolbar: false,
@@ -100,7 +100,7 @@ app.on('ready', function () {
 
 
     // Open the DevTools. Ctrl + Shift + I
-    win.webContents.openDevTools();
+    // win.webContents.openDevTools();
 
     // Emitted when the window is closed.
     win.on('closed', function () {

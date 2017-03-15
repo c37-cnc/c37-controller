@@ -475,6 +475,28 @@
             }
         }
     },
+    "message":{
+        "success":{
+            "header": {
+                "text": "😃 Everything is OK!"
+            }
+        },
+        "info":{
+            "header": {
+                "text": "ℹ️ The C37 - Controller informs"
+            }
+        },
+        "warn":{
+            "header": {
+                "text": "⚠ Message of Danger"
+            }
+        },
+        "danger":{
+            "header": {
+                "text": "🔥 Oops, an error"
+            }
+        }
+    },
     "terms": {
         "text": "Terms"
     },
