@@ -483,7 +483,7 @@
         },
         "info":{
             "header": {
-                "text": "ℹ️ The C37 - Controller informs"
+                "text": "🎤 The C37 - Controller informs"
             }
         },
         "warn":{
@@ -493,7 +493,7 @@
         },
         "danger":{
             "header": {
-                "text": "🔥 Oops, an error"
+                "text": "☠️ Oops, an error"
             }
         }
     },
