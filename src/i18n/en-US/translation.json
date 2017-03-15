@@ -476,6 +476,16 @@
         }
     },
     "message": {
+        "header": {
+            "action": {
+                "cloud-send": {
+                    "hint": {
+                        "title": "Send this Error Log",
+                        "text": "Sending your Error Log will allow us to analyze its contents and work to improve the C37 - Controller        "
+                    }
+                }
+            }
+        },
         "success": {
             "header": {
                 "text": "😃 Everything is OK!"
