@@ -493,7 +493,7 @@
         },
         "danger":{
             "header": {
-                "text": "☠️ Oops, an error"
+                "text": "🐛 Oops, an error"
             }
         }
     },
