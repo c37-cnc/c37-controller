@@ -10,6 +10,14 @@ var electron = require('electron'),
 var win,
     winState = null;
 
+
+// // https://nodejs.org/api/process.html#process_event_uncaughtexception
+// // https://github.com/electron/electron/issues/2479
+// process.on('uncaughtException', function (error) {
+//     console.log('sss');
+// });
+
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
