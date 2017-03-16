@@ -509,7 +509,7 @@
     },
     "performance": {
         "viewer": {
-            "text": "<strong>I configured the C37 - Controller for its best performance.</strong><br><div class='text-justify'>Your computer has a 2-core processor and a 32-bit Operating System</div>"
+            "text": "<div class='text-justify'><strong style='display:inline'>The C37 - Controller has been automatically adjusted for its best Performance.</strong> Your computer has a 2-core processor and a 32-bit Operating System</div>"
         },
         "gcode": {
             "text": "<strong>Your file has more than 7000 lines.</strong><br><div class='text-justify'>There may be slow points in the execution of your work</div>"

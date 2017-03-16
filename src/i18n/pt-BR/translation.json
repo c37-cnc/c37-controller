@@ -509,7 +509,7 @@
     },
     "performance": {
         "viewer": {
-            "text": "<strong>Configurei o C37 - Controlador para sua melhor Performance.</strong><br><div class='text-justify'>Seu computador possui um processador com 2 núcleos e um Sistema Operacional de 32-bit</div>"
+            "text": "<div class='text-justify'><strong style='display:inline'>O C37 - Controlador foi automaticamente ajustado para sua melhor Performance.</strong> Seu computador possui um processador com 2 núcleos e um Sistema Operacional de 32-bit</div>"
         },
         "gcode": {
             "text": "<strong>Seu arquivo possui mais de 7000 linhas.</strong><br><div class='text-justify'>Pode haver pontos de lentidão na execução de seu trabalho</div>"
