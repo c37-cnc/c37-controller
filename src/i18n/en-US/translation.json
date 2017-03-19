@@ -67,17 +67,49 @@
                     "title": "Settings",
                     "text": "Dummy Dummy"
                 }
-            },
-            "close": {
-                "text": "Close"
             }
+
         },
         "dialog": {
             "header": {
-                "text": "Help Center"
+                "text": "Settings"
             },
-            "body": {},
-            "footer": {}
+            "body": {
+                "stepMM": {
+                    "title": {
+                        "text": "Steps by Millimeters"
+                    }
+                },
+                "stepMMauto": {
+                    "title": {
+                        "text": "Steps by Millimeters <sup style='font-weight: normal'>automatic - distances</sup>"
+                    },
+                    "informed": {
+                        "text": "informed"
+                    },
+                    "real": {
+                        "text": "real"
+                    }
+                },
+                "acceleration": {
+                    "title": {
+                        "text": "Acceleration <sup style='font-weight: normal'>millimeters per minute</sup>"
+                    }
+                },
+                "maximumSpeed": {
+                    "title": {
+                        "text": "Maximum Speed <sup style='font-weight: normal'>millimeters per minute</sup>"
+                    }
+                }
+            },
+            "footer": {
+                "button": {
+                    "save": {
+                        "text": "Save"
+                    }
+                }
+
+            }
         }
     },
     "help": {
