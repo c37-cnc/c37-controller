@@ -278,14 +278,14 @@
             },
             "footer": {
                 "zero-define": {
-                    "text": "Define Start Point",
+                    "text": "Define",
                     "hint": {
                         "title": "Define Start Point",
                         "text": "Dummy Dummy"
                     }
                 },
                 "zero-return": {
-                    "text": "Return to Start Point",
+                    "text": "Return",
                     "hint": {
                         "title": "Return to Start Point",
                         "text": "Dummy Dummy"
@@ -333,53 +333,52 @@
                         }
                     }
                 },
-                "motion-description": {
-                    "text": "Computer Keyboard Controls",
+                "movement": {
                     "hint": {
                         "title": "Keyboard Controls",
                         "text": "Dummy Dummy"
-                    }
-                },
-                "x-": {
-                    "hint": {
-                        "title": "x-",
-                        "text": "Dummy Dummy"
-                    }
-                },
-                "x+": {
-                    "hint": {
-                        "title": "x+",
-                        "text": "Dummy Dummy"
-                    }
-                },
-                "y-": {
-                    "hint": {
-                        "title": "y-",
-                        "text": "Dummy Dummy"
-                    }
-                },
-                "y+": {
-                    "hint": {
-                        "title": "y+",
-                        "text": "Dummy Dummy"
-                    }
-                },
-                "z-": {
-                    "hint": {
-                        "title": "z-",
-                        "text": "Dummy Dummy"
-                    }
-                },
-                "z+": {
-                    "hint": {
-                        "title": "z+",
-                        "text": "Dummy Dummy"
-                    }
-                },
-                "free-movement": {
-                    "hint": {
-                        "title": "Free Movement",
-                        "text": "Dummy Dummy"
+                    },
+                    "x-": {
+                        "hint": {
+                            "title": "x-",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "x+": {
+                        "hint": {
+                            "title": "x+",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "y-": {
+                        "hint": {
+                            "title": "y-",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "y+": {
+                        "hint": {
+                            "title": "y+",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "z-": {
+                        "hint": {
+                            "title": "z-",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "z+": {
+                        "hint": {
+                            "title": "z+",
+                            "text": "Dummy Dummy"
+                        }
+                    },
+                    "free": {
+                        "hint": {
+                            "title": "Free Movement",
+                            "text": "Dummy Dummy"
+                        }
                     }
                 },
                 "spindle": {
@@ -473,8 +472,14 @@
                             "title": "Stop",
                             "text": "Dummy Dummy"
                         }
+                    },
+                    "feedrate": {
+                        "text": "Speed C​control",
+                        "hint": {
+                            "title": "Speed C​control",
+                            "text": "Dummy Dummy"
+                        }
                     }
-
                 }
             }
         }
