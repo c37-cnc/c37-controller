@@ -6,7 +6,7 @@
   "homepage": "https://controller.c37.co/",
   "license": "CC BY-NC-ND 4.0",
   "main": "src/index.js",
-  "build": {
+  "build": { 
     "appId": "c37.controller.desktop",
     "files": [
       "src/**/*",
